@@ -4,6 +4,7 @@ const groups = [
   {
     title: "Produto",
     links: [
+      { href: "#historia", label: "A nossa história" },
       { href: "#modulos", label: "Módulos" },
       { href: "#cerimonia", label: "Tradução ao vivo" },
       { href: "#como-funciona", label: "Como funciona" },
