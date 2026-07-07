@@ -11,7 +11,7 @@ const chaos = [
 
 export function Problem() {
   return (
-    <section className="border-y border-ivory-300/60 bg-ivory-50">
+    <section className="border-y border-ivory-300/60 bg-surface-50">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal>

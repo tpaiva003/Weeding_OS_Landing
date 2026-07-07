@@ -24,11 +24,11 @@ export function Ceremony() {
   return (
     <section
       id="cerimonia"
-      className="relative scroll-mt-20 overflow-hidden bg-olive-800 text-ivory-50"
+      className="relative scroll-mt-20 overflow-hidden border-y border-ivory-300/60 bg-olive-900 text-ivory-50"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-olive-600/40 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-olive-600/15 blur-3xl"
       />
       <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">

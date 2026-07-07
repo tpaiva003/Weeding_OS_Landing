@@ -33,7 +33,7 @@ export function SiteHeader() {
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-ivory-300/70 bg-ivory-100/85 backdrop-blur-md"
+          ? "border-b border-ivory-300/70 bg-[#0d0c11]/85 backdrop-blur-md"
           : "border-b border-transparent"
       }`}
     >
@@ -57,7 +57,7 @@ export function SiteHeader() {
         <div className="hidden md:block">
           <a
             href="#acesso"
-            className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-ivory-50 shadow-sm transition-colors hover:bg-olive-800"
+            className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] shadow-sm transition-colors hover:bg-olive-800"
           >
             Pedir acesso
           </a>
@@ -93,7 +93,7 @@ export function SiteHeader() {
 
       {/* mobile menu */}
       {open && (
-        <div className="border-t border-ivory-300/70 bg-ivory-100/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-ivory-300/70 bg-[#0d0c11]/95 backdrop-blur-md md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4">
             {links.map((l) => (
               <a
@@ -108,7 +108,7 @@ export function SiteHeader() {
             <a
               href="#acesso"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-olive-700 px-5 py-3.5 text-center text-base font-semibold text-ivory-50"
+              className="mt-2 rounded-full bg-olive-700 px-5 py-3.5 text-center text-base font-semibold text-[#17130a]"
             >
               Pedir acesso
             </a>

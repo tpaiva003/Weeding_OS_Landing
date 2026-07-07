@@ -10,8 +10,8 @@ export function Logo({
       <span
         className={`flex h-8 w-8 items-center justify-center rounded-lg font-display text-[15px] font-semibold ${
           isLight
-            ? "bg-ivory-50 text-olive-800"
-            : "bg-olive-700 text-ivory-50"
+            ? "bg-surface-50 text-olive-800"
+            : "bg-olive-700 text-[#17130a]"
         }`}
       >
         W

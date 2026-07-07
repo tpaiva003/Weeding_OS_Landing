@@ -30,7 +30,7 @@ export function Waitlist() {
   return (
     <section id="acesso" className="scroll-mt-20 paper">
       <div className="mx-auto max-w-5xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="overflow-hidden rounded-3xl border border-olive-300/40 bg-olive-700 shadow-[var(--shadow-lift)]">
+        <div className="overflow-hidden rounded-3xl border border-olive-700/30 bg-olive-900 shadow-[var(--glow-gold)]">
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="text-ivory-50">
               <h2 className="font-display text-3xl font-semibold leading-tight sm:text-4xl">
@@ -56,7 +56,7 @@ export function Waitlist() {
               </ul>
             </div>
 
-            <div className="rounded-2xl bg-ivory-50 p-6 sm:p-7">
+            <div className="rounded-2xl bg-surface-50 p-6 sm:p-7">
               {sent ? (
                 <div className="flex flex-col items-center justify-center py-8 text-center">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-olive-100 text-olive-700">
@@ -86,7 +86,7 @@ export function Waitlist() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Clara & Tiago"
-                      className="w-full rounded-xl border border-ivory-300 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
+                      className="w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
                     />
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export function Waitlist() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="voces@email.com"
-                      className="w-full rounded-xl border border-ivory-300 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
+                      className="w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
                     />
                   </div>
                   <div>
@@ -119,12 +119,12 @@ export function Waitlist() {
                       type="date"
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
-                      className="w-full rounded-xl border border-ivory-300 bg-white px-4 py-3 text-sm text-ink-900 outline-none transition-colors focus:border-olive-400"
+                      className="w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-3 text-sm text-ink-900 outline-none transition-colors focus:border-olive-400"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-olive-700 px-6 py-3.5 text-base font-semibold text-ivory-50 transition-colors hover:bg-olive-800"
+                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-olive-700 px-6 py-3.5 text-base font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
                   >
                     Pedir acesso
                     <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

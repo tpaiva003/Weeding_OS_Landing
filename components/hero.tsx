@@ -16,7 +16,7 @@ export function Hero() {
           {/* copy */}
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-olive-200/70 bg-ivory-50/70 px-3.5 py-1.5 text-xs font-medium text-olive-700">
+              <span className="inline-flex items-center gap-2 rounded-full border border-olive-200/70 bg-white/[0.05] px-3.5 py-1.5 text-xs font-medium text-olive-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
                 Uma plataforma. Todo o casamento.
               </span>
@@ -63,14 +63,14 @@ export function Hero() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#acesso"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-olive-700 px-7 py-3.5 text-base font-semibold text-ivory-50 shadow-[var(--shadow-soft)] transition-colors hover:bg-olive-800"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-olive-700 px-7 py-3.5 text-base font-semibold text-[#17130a] shadow-[var(--shadow-soft)] transition-colors hover:bg-olive-800"
                 >
                   Pedir acesso antecipado
                   <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a
                   href="#modulos"
-                  className="inline-flex items-center justify-center rounded-full border border-olive-200 bg-ivory-50/60 px-7 py-3.5 text-base font-semibold text-olive-800 transition-colors hover:bg-ivory-50"
+                  className="inline-flex items-center justify-center rounded-full border border-olive-700/40 bg-white/[0.04] px-7 py-3.5 text-base font-semibold text-ink-900 transition-colors hover:bg-white/[0.08]"
                 >
                   Ver os módulos
                 </a>

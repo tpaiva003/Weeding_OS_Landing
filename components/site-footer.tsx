@@ -24,7 +24,7 @@ const groups = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-ivory-300/70 bg-ivory-50">
+    <footer className="border-t border-ivory-300/70 bg-surface-50">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
@@ -35,7 +35,7 @@ export function SiteFooter() {
             </p>
             <a
               href="#acesso"
-              className="mt-5 inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-ivory-50 transition-colors hover:bg-olive-800"
+              className="mt-5 inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
             >
               Pedir acesso
             </a>

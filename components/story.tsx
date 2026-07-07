@@ -64,7 +64,7 @@ export function Story() {
 
           {/* quote / signal card */}
           <Reveal delay={140}>
-            <figure className="relative rounded-3xl border border-olive-300/40 bg-olive-700 p-8 text-ivory-50 shadow-[var(--shadow-lift)] sm:p-10">
+            <figure className="relative rounded-3xl border border-olive-700/30 bg-olive-900 p-8 text-ivory-50 shadow-[var(--glow-gold)] sm:p-10">
               <svg
                 aria-hidden
                 viewBox="0 0 24 24"

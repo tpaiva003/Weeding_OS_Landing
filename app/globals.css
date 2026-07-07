@@ -1,50 +1,65 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Wedding OS: design tokens
- * Olive / ivory / gold palette carried over from the product identity.
+ * Wedding OS: design tokens — "Midnight & Champagne"
+ * Deep ink canvas, warm cream type, champagne-gold accent.
+ * Chic, premium, editorial. Token names are kept from the original
+ * system; values are re-tuned for a dark theme.
+ *   - ink-*   → light type ramp (cream → muted)
+ *   - ivory-* → light type / hairlines on dark panels
+ *   - olive-* → champagne accent ramp (+ deep panel at 900)
+ *   - gold-*  → champagne highlights
+ *   - surface-* → elevated dark card surfaces
  * ------------------------------------------------------------------ */
 @theme {
-  /* Ivory / paper */
-  --color-ivory-50: #fdfcf9;
-  --color-ivory-100: #f9f7f0;
-  --color-ivory-200: #f2eee2;
-  --color-ivory-300: #e8e2d1;
+  /* Warm cream type + light veils on dark panels */
+  --color-ivory-50: #f7f3ea;
+  --color-ivory-100: #ece7db;
+  --color-ivory-200: #262430; /* dark hairline / chip on dark */
+  --color-ivory-300: #322f3b; /* dark hairline */
 
-  /* Olive / sage (primary) */
-  --color-olive-50: #f3f4ee;
-  --color-olive-100: #e2e5d6;
-  --color-olive-300: #b3b795;
-  --color-olive-400: #919071;
-  --color-olive-500: #767a56;
-  --color-olive-600: #5f6b4a;
-  --color-olive-700: #4a5339;
-  --color-olive-800: #3a4030;
-  --color-olive-900: #2b2f24;
+  /* Champagne / brass (primary accent) */
+  --color-olive-50: #201b10;
+  --color-olive-100: #2a2417; /* icon chip bg */
+  --color-olive-200: #3a3220;
+  --color-olive-300: #4c4230;
+  --color-olive-400: #e8ce8a;
+  --color-olive-500: #c8a24b;
+  --color-olive-600: #d4b45e;
+  --color-olive-700: #c9a34c; /* accent text + button fill (dark text on top) */
+  --color-olive-800: #b98f3a; /* hover */
+  --color-olive-900: #141019; /* deep panel bg */
 
-  /* Gold (accent) */
-  --color-gold-400: #c6a869;
-  --color-gold-500: #b08d57;
-  --color-gold-600: #9a7742;
+  /* Champagne highlights */
+  --color-gold-400: #e8ce8a;
+  --color-gold-500: #d4b45e;
+  --color-gold-600: #c8a24b;
 
-  /* Warm ink */
-  --color-ink-900: #2a2a24;
-  --color-ink-700: #4b4b41;
-  --color-ink-500: #6b6b5e;
+  /* Warm light type ramp (on dark) */
+  --color-ink-900: #f3efe6;
+  --color-ink-800: #e6e1d5;
+  --color-ink-700: #c0bbaf;
+  --color-ink-500: #8b867b;
+
+  /* Elevated dark surfaces */
+  --color-surface-50: #16141c;
+  --color-surface-100: #1e1b26;
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
 
   --radius-card: 1.25rem;
 
-  --shadow-soft: 0 1px 2px rgba(42, 42, 36, 0.04),
-    0 12px 32px -12px rgba(42, 42, 36, 0.14);
-  --shadow-lift: 0 2px 4px rgba(42, 42, 36, 0.05),
-    0 24px 60px -20px rgba(42, 42, 36, 0.22);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4),
+    0 22px 48px -20px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.5),
+    0 40px 90px -30px rgba(0, 0, 0, 0.85);
+  --glow-gold: 0 0 0 1px rgba(200, 162, 75, 0.14),
+    0 30px 80px -40px rgba(200, 162, 75, 0.35);
 }
 
 :root {
-  --background: var(--color-ivory-100);
+  --background: #0d0c11;
   --foreground: var(--color-ink-900);
 }
 
@@ -62,8 +77,8 @@
   }
 
   ::selection {
-    background: var(--color-olive-400);
-    color: var(--color-ivory-50);
+    background: var(--color-olive-700);
+    color: #17130a;
   }
 }
 
@@ -71,26 +86,47 @@
 .font-display {
   font-family: var(--font-display), Georgia, serif;
   font-optical-sizing: auto;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
-/* Subtle grain / paper feel on large surfaces */
+/* Elevated dark card + hairline (premium default surface) */
+.surface {
+  background: var(--color-surface-50);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.surface-2 {
+  background: var(--color-surface-100);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Deep, faintly-warm canvas with a whisper of grain */
 .paper {
-  background-color: var(--color-ivory-100);
+  background-color: #0d0c11;
   background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(118, 122, 86, 0.06) 1px,
-    transparent 0
+      circle at 1px 1px,
+      rgba(200, 162, 75, 0.05) 1px,
+      transparent 0
+    );
+  background-size: 26px 26px;
+}
+
+/* Champagne hairline used to separate premium sections */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 162, 75, 0.35),
+    transparent
   );
-  background-size: 22px 22px;
 }
 
 /* On-scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal.is-visible {

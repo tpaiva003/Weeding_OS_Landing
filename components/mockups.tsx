@@ -7,7 +7,7 @@ export function DashboardMock({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`rounded-2xl border border-ivory-300/80 bg-ivory-50 shadow-[var(--shadow-lift)] overflow-hidden ${className}`}
+      className={`rounded-2xl border border-ivory-300/80 bg-surface-50 shadow-[var(--shadow-lift)] overflow-hidden ${className}`}
     >
       {/* window chrome */}
       <div className="flex items-center gap-1.5 border-b border-ivory-200 px-4 py-3">
@@ -48,7 +48,7 @@ export function DashboardMock({ className = "" }: { className?: string }) {
             ].map((s) => (
               <div
                 key={s.l}
-                className="rounded-lg border border-ivory-200 bg-white px-3 py-2.5"
+                className="rounded-lg border border-ivory-200 bg-surface-100 px-3 py-2.5"
               >
                 <div className={`font-display text-lg font-semibold ${s.c}`}>
                   {s.n}
@@ -61,7 +61,7 @@ export function DashboardMock({ className = "" }: { className?: string }) {
           </div>
 
           {/* budget bar */}
-          <div className="mt-4 rounded-lg border border-ivory-200 bg-white p-3.5">
+          <div className="mt-4 rounded-lg border border-ivory-200 bg-surface-100 p-3.5">
             <div className="flex items-center justify-between text-[10px] text-ink-500">
               <span>Budget Overview</span>
               <span className="text-olive-600">11 fornecedores</span>
@@ -82,7 +82,7 @@ export function DashboardMock({ className = "" }: { className?: string }) {
             <div className="mt-3 grid grid-cols-3 gap-2 border-t border-ivory-200 pt-2.5 text-[9px]">
               <div>
                 <div className="text-ink-500">Pago</div>
-                <div className="font-medium text-[#9a4b3f]">−€15 540</div>
+                <div className="font-medium text-[#e0917f]">−€15 540</div>
               </div>
               <div>
                 <div className="text-ink-500">Prendas</div>
@@ -110,7 +110,7 @@ export function SeatingMock({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`rounded-2xl border border-ivory-300/80 bg-ivory-50 p-4 shadow-[var(--shadow-lift)] ${className}`}
+      className={`rounded-2xl border border-ivory-300/80 bg-surface-50 p-4 shadow-[var(--shadow-lift)] ${className}`}
     >
       <div className="mb-3 flex items-center justify-between">
         <span className="text-[11px] font-medium text-ink-700">
@@ -170,7 +170,7 @@ export function SuppliersMock({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`rounded-2xl border border-ivory-300/80 bg-ivory-50 p-4 shadow-[var(--shadow-lift)] ${className}`}
+      className={`rounded-2xl border border-ivory-300/80 bg-surface-50 p-4 shadow-[var(--shadow-lift)] ${className}`}
     >
       <div className="mb-3 flex items-center justify-between">
         <span className="text-[11px] font-medium text-ink-700">
@@ -184,7 +184,7 @@ export function SuppliersMock({ className = "" }: { className?: string }) {
         {rows.map((r, i) => (
           <div
             key={r.name}
-            className="flex items-center justify-between rounded-lg border border-ivory-200 bg-white px-3 py-2"
+            className="flex items-center justify-between rounded-lg border border-ivory-200 bg-surface-100 px-3 py-2"
           >
             <div className="flex items-center gap-2.5">
               <span
@@ -260,10 +260,10 @@ export function TranslationMock({ className = "" }: { className?: string }) {
           Tradução ao vivo
         </span>
         <div className="flex gap-1">
-          <span className="rounded-full bg-ivory-50 px-2 py-0.5 text-[9px] font-semibold text-olive-800">
+          <span className="rounded-full bg-surface-50 px-2 py-0.5 text-[9px] font-semibold text-olive-800">
             PT
           </span>
-          <span className="rounded-full bg-olive-700 px-2 py-0.5 text-[9px] font-medium text-ivory-100">
+          <span className="rounded-full bg-olive-700 px-2 py-0.5 text-[9px] font-medium text-[#17130a]">
             EN
           </span>
         </div>
@@ -272,7 +272,7 @@ export function TranslationMock({ className = "" }: { className?: string }) {
         <div className="rounded-xl rounded-tl-sm bg-olive-700/70 px-3 py-2 text-[11px] leading-relaxed text-ivory-100">
           «E assim, diante de todos, damos início a esta cerimónia.»
         </div>
-        <div className="rounded-xl rounded-tr-sm bg-ivory-50 px-3 py-2 text-[11px] leading-relaxed text-olive-900">
+        <div className="rounded-xl rounded-tr-sm bg-surface-100 px-3 py-2 text-[11px] leading-relaxed text-ink-900">
           “And so, before everyone, we begin this ceremony.”
         </div>
       </div>
