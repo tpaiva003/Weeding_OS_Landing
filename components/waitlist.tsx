@@ -9,7 +9,7 @@ import { IconArrow, IconCheck } from "./icons";
  * mailto for a POST to an API route / form service when a backend exists.
  */
 const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "ola@weddingos.pt";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weeding-os.online";
 
 export function Waitlist() {
   const [name, setName] = useState("");
