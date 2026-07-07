@@ -3,7 +3,7 @@ import { IconSpark } from "./icons";
 
 /**
  * "A chegar" teaser. The couple is releasing Wedding OS ahead of their own
- * wedding, so upcoming guest-facing features are hinted at — not detailed —
+ * wedding, so upcoming guest-facing features are hinted at, not detailed,
  * and reserved for a live demo or after the big day.
  */
 const teasers = [
@@ -37,7 +37,7 @@ export function Ceremony() {
         <Reveal delay={160}>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ivory-100/90">
             Estamos a preparar novas funcionalidades que vamos revelar numa
-            demo — e algumas ganham vida no dia certo, depois do nosso próprio
+            demo, e algumas ganham vida no dia certo, depois do nosso próprio
             casamento. Pede acesso e mostramos-te em primeira mão.
           </p>
         </Reveal>

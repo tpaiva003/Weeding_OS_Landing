@@ -36,9 +36,9 @@ export function Problem() {
                 {chaos.map((c) => (
                   <li
                     key={c}
-                    className="flex items-center gap-3 rounded-xl border border-ivory-300/70 bg-ivory-100 px-4 py-3.5 text-sm text-ink-700"
+                    className="flex items-center gap-3 rounded-xl border border-ivory-300/70 bg-surface-100 px-4 py-3.5 text-sm text-ink-700"
                   >
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#f0e3df] text-[#9a4b3f]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#3a2420] text-[#e0917f]">
                       <svg
                         viewBox="0 0 24 24"
                         className="h-3.5 w-3.5"
@@ -50,7 +50,7 @@ export function Problem() {
                         <path d="M6 6l12 12M18 6L6 18" />
                       </svg>
                     </span>
-                    <span className="line-through decoration-ink-500/30">
+                    <span className="line-through decoration-ink-500/60">
                       {c}
                     </span>
                   </li>

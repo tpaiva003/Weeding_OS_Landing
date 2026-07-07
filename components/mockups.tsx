@@ -1,6 +1,6 @@
 /**
  * Lightweight, self-contained UI mockups that evoke the real product
- * without exposing any private data. Purely decorative — all figures,
+ * without exposing any private data. Purely decorative. All figures,
  * supplier names and table names below are generic placeholders.
  */
 
@@ -43,9 +43,9 @@ export function DashboardMock({ className = "" }: { className?: string }) {
         <div className="p-4 sm:p-5">
           <div className="grid grid-cols-3 gap-2.5">
             {[
-              { n: "120", l: "Convidados", c: "text-ink-900" },
-              { n: "96", l: "Confirmados", c: "text-olive-600" },
-              { n: "€40.0k", l: "Orçamento", c: "text-gold-600" },
+              { n: "260", l: "Convidados", c: "text-ink-900" },
+              { n: "208", l: "Confirmados", c: "text-olive-600" },
+              { n: "€95.0k", l: "Orçamento", c: "text-gold-600" },
             ].map((s) => (
               <div
                 key={s.l}
@@ -69,29 +69,29 @@ export function DashboardMock({ className = "" }: { className?: string }) {
             </div>
             <div className="mt-2 flex items-baseline justify-between">
               <span className="font-display text-base font-semibold text-ink-900">
-                €18 000 <span className="text-[10px] text-ink-500">pago</span>
+                €58 000 <span className="text-[10px] text-ink-500">pago</span>
               </span>
               <span className="font-display text-base font-semibold text-gold-600">
-                €22 000{" "}
+                €37 000{" "}
                 <span className="text-[10px] text-ink-500">por liquidar</span>
               </span>
             </div>
             <div className="mt-2 h-2 overflow-hidden rounded-full bg-ivory-200">
-              <div className="h-full w-[45%] rounded-full bg-olive-500" />
+              <div className="h-full w-[61%] rounded-full bg-olive-500" />
             </div>
             {/* P&L row */}
             <div className="mt-3 grid grid-cols-3 gap-2 border-t border-ivory-200 pt-2.5 text-[9px]">
               <div>
                 <div className="text-ink-500">Pago</div>
-                <div className="font-medium text-[#e0917f]">−€18 000</div>
+                <div className="font-medium text-[#e0917f]">−€58 000</div>
               </div>
               <div>
                 <div className="text-ink-500">Prendas</div>
-                <div className="font-medium text-olive-600">+€6 000</div>
+                <div className="font-medium text-olive-600">+€18 000</div>
               </div>
               <div>
                 <div className="text-ink-500">Saldo</div>
-                <div className="font-medium text-ink-900">−€12 000</div>
+                <div className="font-medium text-ink-900">−€40 000</div>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export function SeatingMock({ className = "" }: { className?: string }) {
         <span className="text-[11px] font-medium text-ink-700">
           Plano de mesas
         </span>
-        <span className="text-[10px] text-ink-500">8 mesas · 96 por sentar</span>
+        <span className="text-[10px] text-ink-500">18 mesas · 260 por sentar</span>
       </div>
       <div className="relative aspect-[4/3] w-full rounded-xl bg-[radial-gradient(circle_at_1px_1px,rgba(200,162,75,0.14)_1px,transparent_0)] [background-size:14px_14px] ring-1 ring-ivory-200">
         <svg viewBox="0 0 100 90" className="absolute inset-0 h-full w-full">
@@ -213,7 +213,7 @@ export function SuppliersMock({ className = "" }: { className?: string }) {
 }
 
 /**
- * Mobile view of the app (guest & RSVP management) — dark, legible,
+ * Mobile view of the app (guest & RSVP management): dark, legible,
  * and deliberately NOT the guest-facing digital invite.
  */
 export function PhoneInvite({ className = "" }: { className?: string }) {
@@ -234,11 +234,9 @@ export function PhoneInvite({ className = "" }: { className?: string }) {
               Convidados
             </p>
             <div className="mt-1 flex items-baseline gap-2">
-              <span className="font-display text-2xl font-semibold text-ivory-50">
-                96
-              </span>
+              <span className="font-display text-2xl font-semibold text-ivory-50">208</span>
               <span className="text-[11px] text-ivory-100/70">
-                de 120 confirmados
+                de 260 confirmados
               </span>
             </div>
             <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-ivory-50/10">

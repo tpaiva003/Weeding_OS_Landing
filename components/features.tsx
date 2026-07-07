@@ -49,7 +49,7 @@ const modules = [
   {
     icon: IconSpark,
     title: "E mais a chegar",
-    desc: "Estamos a preparar novas funcionalidades para os convidados e para o grande dia. Revelamo-las numa demo — e algumas ganham vida depois do nosso próprio casamento.",
+    desc: "Estamos a preparar novas funcionalidades para os convidados e para o grande dia. Revelamo-las numa demo, e algumas ganham vida depois do nosso próprio casamento.",
     tag: "Demo · em breve",
     highlight: true,
   },

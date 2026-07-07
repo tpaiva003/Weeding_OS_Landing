@@ -35,17 +35,17 @@ export function Story() {
                 e tarefas a competir com a nossa vida.
               </p>
               <p>
-                Convidados, mesas, menus, alergias, fornecedores, pagamentos — e
-                família e amigos que vinham de fora e não falavam português.
-                Cada tarefa vivia numa app diferente, cada decisão exigia abrir
-                cinco separadores. Passávamos mais tempo a{" "}
+                Convidados, mesas, menus, alergias, fornecedores, pagamentos. E
+                ainda família e amigos que vinham de fora e não falavam
+                português. Cada tarefa vivia numa app diferente, cada decisão
+                exigia abrir cinco separadores. Passávamos mais tempo a{" "}
                 <span className="italic">gerir</span> o nosso casamento do que a{" "}
                 <span className="italic">saboreá-lo</span>.
               </p>
               <p>
                 Então construímos aquilo que gostávamos de ter tido desde o
                 início: um sistema que junta tudo, fala com os convidados por
-                nós e nos devolve o que mais importa —{" "}
+                nós e nos devolve o que mais importa:{" "}
                 <span className="font-medium text-ink-900">
                   estar presentes no nosso próprio dia
                 </span>
