@@ -5,11 +5,11 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Que módulos estão disponíveis já?",
-    a: "No lançamento tens convidados & RSVP, plano de mesas, fornecedores & pagamentos, orçamento & P&L, catering & restrições e o controlo do dia — todos ligados entre si.",
+    a: "No lançamento tens convidados & RSVP, plano de mesas, fornecedores & pagamentos, orçamento & P&L, catering & restrições e o controlo do dia, todos ligados entre si.",
   },
   {
     q: "Há mais funcionalidades a caminho?",
-    a: "Sim. Estamos a preparar novidades — algumas pensadas para os convidados e para o próprio dia — que revelamos numa demo, e algumas ganham vida depois do nosso casamento. Pede acesso e mostramos-te o que aí vem.",
+    a: "Sim. Estamos a preparar novidades, algumas pensadas para os convidados e para o próprio dia, que revelamos numa demo. Outras ganham vida depois do nosso casamento. Pede acesso e mostramos-te o que aí vem.",
   },
   {
     q: "Posso importar a minha lista de convidados?",
