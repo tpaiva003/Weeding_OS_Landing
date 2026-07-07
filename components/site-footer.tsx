@@ -6,7 +6,7 @@ const groups = [
     links: [
       { href: "#historia", label: "A nossa história" },
       { href: "#modulos", label: "Módulos" },
-      { href: "#cerimonia", label: "Tradução ao vivo" },
+      { href: "#a-chegar", label: "A chegar" },
       { href: "#como-funciona", label: "Como funciona" },
       { href: "#faq", label: "FAQ" },
     ],
@@ -17,7 +17,7 @@ const groups = [
       { href: "#modulos", label: "Convidados & RSVP" },
       { href: "#modulos", label: "Plano de mesas" },
       { href: "#modulos", label: "Fornecedores" },
-      { href: "#modulos", label: "Convite digital" },
+      { href: "#modulos", label: "Catering & restrições" },
     ],
   },
 ];

@@ -4,12 +4,12 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "O convite digital está incluído?",
-    a: "Sim. O convite com envelope animado, contagem decrescente, a vossa história e RSVP integrado faz parte da plataforma, e liga-se diretamente à gestão de convidados.",
+    q: "Que módulos estão disponíveis já?",
+    a: "No lançamento tens convidados & RSVP, plano de mesas, fornecedores & pagamentos, orçamento & P&L, catering & restrições e o controlo do dia — todos ligados entre si.",
   },
   {
-    q: "Como funciona a tradução ao vivo da cerimónia?",
-    a: "A cerimónia é transcrita e traduzida em tempo real. Cada convidado abre o link no telemóvel e segue as legendas no seu idioma. Não é preciso equipamento nem intérprete na sala. O som é opcional e discreto.",
+    q: "Há mais funcionalidades a caminho?",
+    a: "Sim. Estamos a preparar novidades — algumas pensadas para os convidados e para o próprio dia — que revelamos numa demo, e algumas ganham vida depois do nosso casamento. Pede acesso e mostramos-te o que aí vem.",
   },
   {
     q: "Posso importar a minha lista de convidados?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Funciona bem no telemóvel?",
-    a: "Foi pensado para o telemóvel. A plataforma é instalável como aplicação (PWA) e as páginas do dia do casamento (fotos, controlo do dia e tradução) estão otimizadas para o ecrã pequeno.",
+    a: "Foi pensado para o telemóvel. A plataforma é instalável como aplicação (PWA) e o controlo do dia do casamento faz-se todo a partir do telemóvel, otimizado para o ecrã pequeno.",
   },
   {
     q: "Preciso de conhecimentos técnicos?",

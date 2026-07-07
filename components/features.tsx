@@ -5,18 +5,16 @@ import {
   IconSuppliers,
   IconBudget,
   IconCatering,
-  IconInvite,
-  IconTranslate,
-  IconPhotos,
   IconDay,
+  IconSpark,
 } from "./icons";
 
 const modules = [
   {
     icon: IconGuests,
     title: "Convidados & RSVP",
-    desc: "Famílias, convidados e confirmações num só lugar. Importa a tua lista, envia links de convite únicos e vê quem confirmou em tempo real.",
-    tag: "134 convidados · 54 famílias",
+    desc: "Famílias, convidados e confirmações num só lugar. Importa a tua lista, agrupa por família e vê quem confirmou em tempo real.",
+    tag: "Famílias · confirmações",
   },
   {
     icon: IconSeating,
@@ -43,29 +41,17 @@ const modules = [
     tag: "Export PDF",
   },
   {
-    icon: IconInvite,
-    title: "Convite digital",
-    desc: "Um convite com envelope animado, contagem decrescente, a vossa história e RSVP integrado. Instalável no telemóvel como uma app.",
-    tag: "PT / EN · PWA",
-  },
-  {
-    icon: IconTranslate,
-    title: "Tradução ao vivo",
-    desc: "A cerimónia legendada e traduzida em direto para os convidados internacionais, no próprio telemóvel de cada um.",
-    tag: "O grande diferenciador",
-    highlight: true,
-  },
-  {
-    icon: IconPhotos,
-    title: "Mural de fotos",
-    desc: "Os convidados enviam várias fotos de uma vez; o fotógrafo carrega ao longo do dia. Tudo num mural partilhado e moderado.",
-    tag: "Multi-upload · ao vivo",
-  },
-  {
     icon: IconDay,
     title: "Controlo do Dia",
     desc: "O guião do dia, a equipa e os momentos-chave: tudo coordenado a partir do telemóvel, para correr sem sobressaltos.",
     tag: "Timeline · equipa",
+  },
+  {
+    icon: IconSpark,
+    title: "E mais a chegar",
+    desc: "Estamos a preparar novas funcionalidades para os convidados e para o grande dia. Revelamo-las numa demo — e algumas ganham vida depois do nosso próprio casamento.",
+    tag: "Demo · em breve",
+    highlight: true,
   },
 ];
 
@@ -78,11 +64,12 @@ export function Features() {
             Os módulos
           </p>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-ink-900 sm:text-[2.6rem]">
-            Nove módulos que trabalham como um só.
+            Os módulos essenciais, a trabalhar como um só.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-700">
             Marca um pagamento como pago e a tarefa fecha. Confirma um convidado
-            e o plano de mesas atualiza. Tudo ligado: sem copiar e colar.
+            e o plano de mesas atualiza. Tudo ligado: sem copiar e colar. E com
+            mais a chegar.
           </p>
         </Reveal>
 

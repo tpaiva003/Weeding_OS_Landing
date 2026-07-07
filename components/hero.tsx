@@ -50,12 +50,11 @@ export function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                Convidados, orçamento, fornecedores, plano de mesas, convite
-                digital e{" "}
+                Convidados, orçamento, fornecedores e plano de mesas:{" "}
                 <span className="font-medium text-ink-900">
-                  tradução ao vivo da cerimónia
-                </span>{" "}
-               : tudo num só sítio. Do «sim» à última dança.
+                  tudo num só sítio
+                </span>
+                . E muito mais a chegar, do «sim» à última dança.
               </p>
             </Reveal>
 
@@ -81,11 +80,11 @@ export function Hero() {
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-500">
                 <span className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-olive-500" />
-                  9 módulos integrados
+                  Módulos integrados
                 </span>
                 <span className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-olive-500" />
-                  Convite digital incluído
+                  Tudo ligado entre si
                 </span>
                 <span className="flex items-center gap-2">
                   <span className="h-1 w-1 rounded-full bg-olive-500" />
