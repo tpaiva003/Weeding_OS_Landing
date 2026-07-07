@@ -55,7 +55,7 @@ function Spotlight({
 
 export function Spotlights() {
   return (
-    <section className="border-y border-ivory-300/60 bg-ivory-50">
+    <section className="border-y border-ivory-300/60 bg-surface-50">
       <div className="mx-auto max-w-6xl divide-y divide-ivory-300/60 px-5 sm:px-8">
         <Spotlight
           eyebrow="Convidados & Convite"

@@ -39,7 +39,7 @@ export function HowItWorks() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={i * 90}>
-              <div className="relative h-full rounded-2xl border border-ivory-300/70 bg-ivory-50 p-6">
+              <div className="relative h-full rounded-2xl border border-ivory-300/70 bg-surface-50 p-6">
                 <span className="font-display text-4xl font-semibold text-olive-200">
                   {s.n}
                 </span>

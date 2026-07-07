@@ -15,7 +15,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://www.clara-tiago-4outubro2026.pt";
+const siteUrl = "https://weeding-os.online";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

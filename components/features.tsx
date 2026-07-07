@@ -96,8 +96,8 @@ export function Features() {
                 delay={(i % 3) * 80}
                 className={`group flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 ${
                   m.highlight
-                    ? "border-olive-300 bg-olive-700 text-ivory-50 shadow-[var(--shadow-soft)]"
-                    : "border-ivory-300/70 bg-ivory-50 hover:border-olive-200 hover:shadow-[var(--shadow-soft)]"
+                    ? "border-olive-700/40 bg-olive-900 text-ivory-50 shadow-[var(--glow-gold)]"
+                    : "border-ivory-300/70 bg-surface-50 hover:border-olive-200 hover:shadow-[var(--shadow-soft)]"
                 }`}
               >
                 <div
