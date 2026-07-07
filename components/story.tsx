@@ -24,19 +24,21 @@ export function Story() {
                 Somos a{" "}
                 <span className="font-medium text-olive-700">Clara</span> e o{" "}
                 <span className="font-medium text-olive-700">Tiago</span>.
-                Ficámos noivos cheios de vontade e, poucas semanas depois,
-                afogados em listas. Percebemos cedo que planear um casamento não
-                é um evento: são{" "}
+                Conhecemo-nos na escola e estamos juntos{" "}
+                <span className="font-medium text-ink-900">desde 2012</span>.
+                Quando decidimos casar, cheios de vontade, poucas semanas
+                depois estávamos afogados em listas. Percebemos cedo que planear
+                um casamento não é um evento: são{" "}
                 <span className="font-medium text-ink-900">
                   centenas de pequenas decisões
                 </span>{" "}
                 e tarefas a competir com a nossa vida.
               </p>
               <p>
-                Convidados, mesas, menus, alergias, fornecedores, pagamentos,
-                família que vinha de fora e não falava português. Cada tarefa
-                vivia numa app diferente, cada decisão exigia abrir cinco
-                separadores. Passávamos mais tempo a{" "}
+                Convidados, mesas, menus, alergias, fornecedores, pagamentos — e
+                família e amigos que vinham de fora e não falavam português.
+                Cada tarefa vivia numa app diferente, cada decisão exigia abrir
+                cinco separadores. Passávamos mais tempo a{" "}
                 <span className="italic">gerir</span> o nosso casamento do que a{" "}
                 <span className="italic">saboreá-lo</span>.
               </p>
@@ -81,6 +83,14 @@ export function Story() {
               <figcaption className="mt-8 grid grid-cols-3 gap-4 border-t border-ivory-50/15 pt-6">
                 <div>
                   <div className="font-display text-2xl font-semibold text-ivory-50">
+                    2012
+                  </div>
+                  <div className="mt-1 text-xs text-ivory-100/80">
+                    juntos desde então
+                  </div>
+                </div>
+                <div>
+                  <div className="font-display text-2xl font-semibold text-ivory-50">
                     300+
                   </div>
                   <div className="mt-1 text-xs text-ivory-100/80">
@@ -89,18 +99,10 @@ export function Story() {
                 </div>
                 <div>
                   <div className="font-display text-2xl font-semibold text-ivory-50">
-                    9
-                  </div>
-                  <div className="mt-1 text-xs text-ivory-100/80">
-                    módulos, um só sítio
-                  </div>
-                </div>
-                <div>
-                  <div className="font-display text-2xl font-semibold text-ivory-50">
                     1
                   </div>
                   <div className="mt-1 text-xs text-ivory-100/80">
-                    dia para viver, não gerir
+                    plataforma para tudo
                   </div>
                 </div>
               </figcaption>

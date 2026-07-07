@@ -6,7 +6,7 @@ import { Logo } from "./logo";
 const links = [
   { href: "#historia", label: "A nossa história" },
   { href: "#modulos", label: "Módulos" },
-  { href: "#cerimonia", label: "Cerimónia" },
+  { href: "#a-chegar", label: "A chegar" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#faq", label: "FAQ" },
 ];

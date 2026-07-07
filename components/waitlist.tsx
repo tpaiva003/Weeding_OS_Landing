@@ -42,9 +42,9 @@ export function Waitlist() {
               </p>
               <ul className="mt-7 space-y-2.5 text-[15px] text-ivory-100/90">
                 {[
-                  "Convite digital + RSVP incluídos",
-                  "Tradução ao vivo da cerimónia",
-                  "Orçamento, fornecedores e mesas num só sítio",
+                  "Convidados, RSVP e plano de mesas",
+                  "Orçamento, fornecedores e catering",
+                  "Novas funcionalidades a chegar",
                 ].map((p) => (
                   <li key={p} className="flex items-center gap-3">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-ivory-50/15 text-gold-400">

@@ -1,91 +1,68 @@
 import { Reveal } from "./reveal";
-import { TranslationMock } from "./mockups";
-import { IconTranslate, IconSpark, IconSound } from "./icons";
+import { IconSpark } from "./icons";
 
-const highlights = [
-  {
-    icon: IconTranslate,
-    title: "Legendas em direto",
-    desc: "A cerimónia transcrita e traduzida ao vivo, no telemóvel de cada convidado.",
-  },
-  {
-    icon: IconSpark,
-    title: "Tradução com contexto",
-    desc: "O tradutor usa as frases anteriores para acertar o sentido: «na segunda» não vira «segunda parte».",
-  },
-  {
-    icon: IconSound,
-    title: "Som opcional e discreto",
-    desc: "Silêncio por defeito para o celebrante; o convidado ativa a voz se quiser, sem interromper ninguém.",
-  },
+/**
+ * "A chegar" teaser. The couple is releasing Wedding OS ahead of their own
+ * wedding, so upcoming guest-facing features are hinted at — not detailed —
+ * and reserved for a live demo or after the big day.
+ */
+const teasers = [
+  "Experiências para os convidados no próprio dia",
+  "Novidades pensadas para casamentos internacionais",
+  "Memórias do casamento, reunidas automaticamente",
 ];
 
 export function Ceremony() {
   return (
     <section
-      id="cerimonia"
+      id="a-chegar"
       className="relative scroll-mt-20 overflow-hidden border-y border-ivory-300/60 bg-olive-900 text-ivory-50"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-olive-600/15 blur-3xl"
       />
-      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-ivory-50/20 bg-ivory-50/10 px-3.5 py-1.5 text-xs font-medium text-gold-400">
-                <IconSpark className="h-3.5 w-3.5" />
-                O que mais ninguém faz
-              </span>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="mt-6 font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
-                A cerimónia traduzida ao vivo, para todos.
-              </h2>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-ivory-100/90">
-                Convidados de vários países? Cada um segue a cerimónia no seu
-                idioma, em tempo real, a partir do próprio telemóvel: sem
-                equipamento, sem intérprete na sala.
-              </p>
-            </Reveal>
+      <div className="relative mx-auto max-w-4xl px-5 py-20 text-center sm:px-8 sm:py-28">
+        <Reveal>
+          <span className="inline-flex items-center gap-2 rounded-full border border-ivory-50/20 bg-ivory-50/10 px-3.5 py-1.5 text-xs font-medium text-gold-400">
+            <IconSpark className="h-3.5 w-3.5" />
+            A chegar
+          </span>
+        </Reveal>
+        <Reveal delay={80}>
+          <h2 className="mx-auto mt-6 max-w-2xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+            E há mais a caminho.
+          </h2>
+        </Reveal>
+        <Reveal delay={160}>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ivory-100/90">
+            Estamos a preparar novas funcionalidades que vamos revelar numa
+            demo — e algumas ganham vida no dia certo, depois do nosso próprio
+            casamento. Pede acesso e mostramos-te em primeira mão.
+          </p>
+        </Reveal>
 
-            <div className="mt-9 space-y-5">
-              {highlights.map((h, i) => {
-                const Icon = h.icon;
-                return (
-                  <Reveal key={h.title} delay={220 + i * 80}>
-                    <div className="flex gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ivory-50/10 text-gold-400">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-display text-lg font-semibold text-ivory-50">
-                          {h.title}
-                        </h3>
-                        <p className="mt-1 text-[15px] leading-relaxed text-ivory-100/80">
-                          {h.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
+        <Reveal delay={220}>
+          <ul className="mx-auto mt-9 flex max-w-2xl flex-wrap justify-center gap-2.5">
+            {teasers.map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-ivory-50/12 bg-ivory-50/[0.05] px-4 py-2 text-[13px] font-medium text-ivory-100/90"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
-          <Reveal delay={200}>
-            <div className="relative">
-              <TranslationMock />
-              <div
-                aria-hidden
-                className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-2xl border border-ivory-50/10"
-              />
-            </div>
-          </Reveal>
-        </div>
+        <Reveal delay={300}>
+          <a
+            href="#acesso"
+            className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-olive-700 px-7 py-3.5 text-base font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
+          >
+            Marcar uma demo
+          </a>
+        </Reveal>
       </div>
     </section>
   );

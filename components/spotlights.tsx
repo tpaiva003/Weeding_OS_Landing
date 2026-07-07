@@ -58,14 +58,14 @@ export function Spotlights() {
     <section className="border-y border-ivory-300/60 bg-surface-50">
       <div className="mx-auto max-w-6xl divide-y divide-ivory-300/60 px-5 sm:px-8">
         <Spotlight
-          eyebrow="Convidados & Convite"
-          title="Do convite ao «sim, vamos» sem folhas de cálculo."
-          body="Envia um convite digital elegante com RSVP integrado. Cada família recebe um link único e legível, e a confirmação entra direto na tua lista."
+          eyebrow="Convidados & RSVP"
+          title="A tua lista de convidados, finalmente sob controlo."
+          body="Importa famílias e convidados de uma vez, agrupa-os e acompanha as confirmações em tempo real. As restrições alimentares entram direto na tua gestão."
           points={[
-            "Links de convite legíveis e impossíveis de adivinhar (ex.: /familia-silva-7k3q)",
-            "Restrições alimentares recolhidas no momento da confirmação",
-            "Contagem decrescente, a vossa história e mapa: tudo no convite",
-            "Instalável no telemóvel como uma aplicação (PWA)",
+            "Importa famílias e convidados de uma vez, sem os adicionar um a um",
+            "Confirmações e restrições alimentares recolhidas num só sítio",
+            "Agrupa por família, idade e mesa",
+            "Sincronizado com o plano de mesas e o catering",
           ]}
           visual={
             <div className="relative flex justify-center">
