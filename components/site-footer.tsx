@@ -7,6 +7,7 @@ const groups = [
       { href: "#historia", label: "A nossa história" },
       { href: "#modulos", label: "Módulos" },
       { href: "#bastidores", label: "Bastidores" },
+      { href: "#ia", label: "IA" },
       { href: "#a-chegar", label: "A chegar" },
       { href: "#como-funciona", label: "Como funciona" },
       { href: "#faq", label: "FAQ" },
