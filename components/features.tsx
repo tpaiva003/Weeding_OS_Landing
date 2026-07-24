@@ -6,6 +6,8 @@ import {
   IconBudget,
   IconCatering,
   IconDay,
+  IconTasks,
+  IconGift,
   IconSpark,
 } from "./icons";
 
@@ -45,6 +47,18 @@ const modules = [
     title: "Controlo do Dia",
     desc: "O guião do dia, a equipa e os momentos-chave: tudo coordenado a partir do telemóvel, para correr sem sobressaltos.",
     tag: "Timeline · equipa",
+  },
+  {
+    icon: IconTasks,
+    title: "Tarefas & Checklist",
+    desc: "A lista de tudo o que falta fazer, com prazos e responsáveis. As tarefas ligam-se aos fornecedores e aos pagamentos, para nada ficar esquecido.",
+    tag: "Prazos · responsáveis",
+  },
+  {
+    icon: IconGift,
+    title: "Prendas & Gift Log",
+    desc: "Regista as prendas recebidas e liga-as aos convidados. O saldo (prendas menos gastos) fica sempre à vista no balanço do casamento.",
+    tag: "Saldo · por convidado",
   },
   {
     icon: IconSpark,
