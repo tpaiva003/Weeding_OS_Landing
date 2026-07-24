@@ -23,6 +23,52 @@ function Base({ children, ...props }: IconProps & { children: React.ReactNode })
   );
 }
 
+export const IconTasks = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="4" y="3.5" width="16" height="17" rx="2" />
+    <path d="M8 8.5l1.6 1.6L12.5 7" />
+    <path d="M8 15l1.6 1.6L12.5 13.5" />
+    <path d="M15.5 9h1.5" />
+    <path d="M15.5 15.5h1.5" />
+  </Base>
+);
+
+export const IconGift = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" />
+    <path d="M3 7.5h18V11H3z" />
+    <path d="M12 7.5v13" />
+    <path d="M12 7.5C12 5.5 10.8 4 9.2 4 8 4 7.2 4.8 7.2 5.8 7.2 7 8.4 7.5 12 7.5z" />
+    <path d="M12 7.5c0-2 1.2-3.5 2.8-3.5 1.2 0 2 .8 2 1.8 0 1.2-1.2 1.7-4.8 1.7z" />
+  </Base>
+);
+
+export const IconTeam = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="8" cy="8.5" r="2.6" />
+    <path d="M3 19a5 5 0 0 1 10 0" />
+    <circle cx="16.5" cy="7.5" r="2.1" />
+    <path d="M14.5 13.2A4.5 4.5 0 0 1 21 17.5" />
+  </Base>
+);
+
+export const IconReport = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M6 3.5h8l4 4V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z" />
+    <path d="M13.5 3.5V8H18" />
+    <path d="M9 13.5v3" />
+    <path d="M12 11.5v5" />
+    <path d="M15 14v2.5" />
+  </Base>
+);
+
+export const IconShield = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 3.5l7 2.5v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9v-5z" />
+    <path d="M9 12l2 2 4-4" />
+  </Base>
+);
+
 export const IconGuests = (p: IconProps) => (
   <Base {...p}>
     <circle cx="9" cy="8" r="3" />

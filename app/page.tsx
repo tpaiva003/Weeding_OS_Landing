@@ -4,6 +4,7 @@ import { Problem } from "@/components/problem";
 import { Story } from "@/components/story";
 import { Features } from "@/components/features";
 import { Spotlights } from "@/components/spotlights";
+import { Backstage } from "@/components/backstage";
 import { Ceremony } from "@/components/ceremony";
 import { HowItWorks } from "@/components/how-it-works";
 import { Faq } from "@/components/faq";
@@ -20,6 +21,7 @@ export default function Home() {
         <Story />
         <Features />
         <Spotlights />
+        <Backstage />
         <Ceremony />
         <HowItWorks />
         <Faq />
