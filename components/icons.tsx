@@ -33,6 +33,14 @@ export const IconTasks = (p: IconProps) => (
   </Base>
 );
 
+export const IconMusic = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M9 18V6l10-2v10" />
+    <circle cx="6.5" cy="18" r="2.5" />
+    <circle cx="16.5" cy="16" r="2.5" />
+  </Base>
+);
+
 export const IconGift = (p: IconProps) => (
   <Base {...p}>
     <path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" />

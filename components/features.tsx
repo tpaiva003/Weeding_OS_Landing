@@ -7,7 +7,7 @@ import {
   IconCatering,
   IconDay,
   IconTasks,
-  IconGift,
+  IconMusic,
   IconSpark,
 } from "./icons";
 
@@ -55,10 +55,10 @@ const modules = [
     tag: "Prazos · responsáveis",
   },
   {
-    icon: IconGift,
-    title: "Prendas & Gift Log",
-    desc: "Regista as prendas recebidas e liga-as aos convidados. O saldo (prendas menos gastos) fica sempre à vista no balanço do casamento.",
-    tag: "Saldo · por convidado",
+    icon: IconMusic,
+    title: "Música & Momentos",
+    desc: "Escolhe as músicas para cada momento (entrada, primeira dança, festa) e partilha a lista com a banda ou o DJ. Uma lista de «não tocar» para não haver surpresas.",
+    tag: "Playlist · banda/DJ",
   },
   {
     icon: IconSpark,

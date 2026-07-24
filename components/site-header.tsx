@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 
 const links = [
-  { href: "#historia", label: "A nossa história" },
+  { href: "#historia", label: "História" },
   { href: "#modulos", label: "Módulos" },
   { href: "#bastidores", label: "Bastidores" },
-  { href: "#a-chegar", label: "A chegar" },
+  { href: "#ia", label: "IA" },
   { href: "#como-funciona", label: "Como funciona" },
   { href: "#faq", label: "FAQ" },
 ];
