@@ -101,6 +101,107 @@ export function DashboardMock({ className = "" }: { className?: string }) {
   );
 }
 
+export function ChatbotMock({ className = "" }: { className?: string }) {
+  return (
+    <div
+      aria-hidden
+      className={`overflow-hidden rounded-2xl border border-olive-700/30 bg-olive-900 shadow-[var(--glow-gold)] ${className}`}
+    >
+      {/* header */}
+      <div className="flex items-center gap-2.5 border-b border-ivory-50/10 px-4 py-3">
+        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-ivory-50/10 text-gold-400">
+          <svg
+            viewBox="0 0 24 24"
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.6}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 3l1.6 3.6L17 8.2l-3.4 1.6L12 13.4l-1.6-3.6L7 8.2l3.4-1.6z" />
+            <path d="M18 14l.8 1.8L20.6 16l-1.8.8L18 18.6l-.8-1.8L15.4 16l1.8-.2z" />
+          </svg>
+        </span>
+        <span className="text-[12px] font-medium text-ivory-50">
+          Copiloto do casamento
+        </span>
+        <span className="ml-auto flex items-center gap-1.5 text-[10px] text-ivory-100/60">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#A9D18E]" /> online
+        </span>
+      </div>
+
+      {/* conversation */}
+      <div className="space-y-3 p-4">
+        {/* user */}
+        <div className="flex justify-end">
+          <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-olive-700 px-3.5 py-2 text-[12px] leading-relaxed text-[#17130a]">
+            Marca o pagamento do catering como pago e fecha a tarefa.
+          </div>
+        </div>
+        {/* assistant */}
+        <div className="flex justify-start">
+          <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-ivory-50/[0.06] px-3.5 py-2.5 text-[12px] leading-relaxed text-ivory-100/90">
+            Feito. Registei o pagamento e fechei a tarefa.
+            <div className="mt-2 space-y-1.5">
+              <div className="flex items-center gap-2 rounded-lg border border-ivory-50/10 bg-ivory-50/[0.04] px-2.5 py-1.5">
+                <span className="text-gold-400">✓</span>
+                <span className="text-[11px] text-ivory-100/80">
+                  Catering marcado como pago
+                </span>
+                <span className="ml-auto text-[11px] font-medium text-gold-400">
+                  −€3 500
+                </span>
+              </div>
+              <div className="flex items-center gap-2 rounded-lg border border-ivory-50/10 bg-ivory-50/[0.04] px-2.5 py-1.5">
+                <span className="text-gold-400">✓</span>
+                <span className="text-[11px] text-ivory-100/80">
+                  Tarefa «Pagar catering» concluída
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* user */}
+        <div className="flex justify-end">
+          <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-olive-700 px-3.5 py-2 text-[12px] leading-relaxed text-[#17130a]">
+            Quantos convidados ainda não confirmaram?
+          </div>
+        </div>
+        {/* assistant */}
+        <div className="flex justify-start">
+          <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-ivory-50/[0.06] px-3.5 py-2.5 text-[12px] leading-relaxed text-ivory-100/90">
+            Faltam 52. Queres que envie um lembrete às famílias em falta?
+          </div>
+        </div>
+      </div>
+
+      {/* input */}
+      <div className="border-t border-ivory-50/10 p-3">
+        <div className="flex items-center gap-2 rounded-full border border-ivory-50/12 bg-ivory-50/[0.04] px-4 py-2">
+          <span className="text-[12px] text-ivory-100/45">
+            Pede alguma coisa ao copiloto…
+          </span>
+          <span className="ml-auto flex h-6 w-6 items-center justify-center rounded-full bg-olive-700 text-[#17130a]">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-3.5 w-3.5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function SeatingMock({ className = "" }: { className?: string }) {
   const tables = [
     { cx: 26, cy: 30, r: 15, label: "Noivos", seats: 8 },
