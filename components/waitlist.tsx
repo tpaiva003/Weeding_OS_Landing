@@ -9,7 +9,7 @@ import { IconArrow, IconCheck } from "./icons";
  * to opening the visitor's mail client with a pre-filled message.
  */
 const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weeding-os.online";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weddingos.pt";
 
 const PROBLEMS = [
   "Gerir convidados e confirmações (RSVP)",

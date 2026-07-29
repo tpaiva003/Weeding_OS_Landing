@@ -15,7 +15,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://weeding-os.online";
+const siteUrl = "https://weddingos.pt";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
