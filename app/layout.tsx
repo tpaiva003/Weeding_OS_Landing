@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { StructuredData } from "@/components/structured-data";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -15,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://weeding-os.online";
+const siteUrl = "https://weddingos.pt";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,22 +25,28 @@ export const metadata: Metadata = {
     template: "%s · Wedding OS",
   },
   description:
-    "Convidados, orçamento, fornecedores, plano de mesas, convite digital e tradução ao vivo da cerimónia: tudo num só sítio. Do «sim» à última dança.",
+    "Convidados & RSVP, plano de mesas, fornecedores, orçamento, catering e um copiloto de IA que executa ações: tudo num só sítio. Do «sim» à última dança.",
+  applicationName: "Wedding OS",
   keywords: [
     "planeamento de casamento",
     "gestão de convidados",
     "RSVP",
     "plano de mesas",
     "orçamento de casamento",
-    "convite digital",
-    "tradução ao vivo cerimónia",
+    "gestão de fornecedores casamento",
+    "copiloto de IA casamento",
+    "software de casamento",
     "wedding planner software",
+    "Wedding OS",
   ],
   authors: [{ name: "Wedding OS" }],
+  creator: "Wedding OS",
+  publisher: "Wedding OS",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Wedding OS: O sistema operativo do vosso casamento",
     description:
-      "Tudo o que precisam para planear, gerir e viver o dia do casamento: numa só plataforma.",
+      "Convidados, plano de mesas, fornecedores, orçamento, catering e um copiloto de IA: tudo num só sítio para planear, gerir e viver o casamento.",
     type: "website",
     locale: "pt_PT",
     url: siteUrl,
@@ -49,9 +56,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wedding OS: O sistema operativo do vosso casamento",
     description:
-      "Convidados, fornecedores, orçamento, convite digital e tradução ao vivo: num só sítio.",
+      "Convidados, fornecedores, orçamento, catering e um copiloto de IA: tudo num só sítio.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -64,7 +76,10 @@ export default function RootLayout({
       lang="pt-PT"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }

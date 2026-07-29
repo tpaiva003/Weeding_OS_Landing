@@ -1,4 +1,7 @@
 import { Logo } from "./logo";
+import { IconInstagram } from "./icons";
+
+const INSTAGRAM_URL = "https://instagram.com/weddingos.pt";
 
 const groups = [
   {
@@ -35,12 +38,23 @@ export function SiteFooter() {
               O sistema operativo do vosso casamento. Planeiem, giram e vivam o
               dia: tudo num só sítio.
             </p>
-            <a
-              href="#acesso"
-              className="mt-5 inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
-            >
-              Pedir acesso
-            </a>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="#acesso"
+                className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
+              >
+                Pedir acesso
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @weddingos.pt"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ivory-300/70 text-ink-700 transition-colors hover:border-olive-400 hover:text-olive-700"
+              >
+                <IconInstagram className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {groups.map((g) => (

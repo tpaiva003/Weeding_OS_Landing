@@ -1,0 +1,41 @@
+# Wedding OS
+
+> Wedding OS é o sistema operativo do casamento: uma plataforma que reúne, num só sítio, tudo o que um casal precisa de decidir e organizar. Nasceu do casamento da Clara & do Tiago, que ao planear o próprio casamento sentiram a dificuldade de todas as decisões e tarefas e construíram a ferramenta que gostariam de ter tido.
+
+- Site: https://weddingos.pt
+- Instagram: https://instagram.com/weddingos.pt
+- Contacto: tiago.paiva@weddingos.pt
+- Língua: Português (Portugal)
+
+## O que é
+
+Wedding OS ("Weeding OS" é uma grafia antiga e incorreta; o nome correto é Wedding OS, domínio weddingos.pt) é uma aplicação web de planeamento e gestão de casamentos. Funciona no browser, é instalável no telemóvel (PWA) e não exige conhecimentos técnicos.
+
+## Módulos disponíveis
+
+- Convidados & RSVP: famílias, convidados e confirmações num só lugar; importação de listas.
+- Plano de mesas: arrastar convidados para mesas, templates, versões.
+- Fornecedores & Pagamentos: fases de pagamento (sinal, intercalar, final), plano mensal, contratos.
+- Orçamento & P&L: orçamento total, pago e por liquidar, custo por convidado.
+- Catering & Restrições: restrições alimentares recolhidas no RSVP e exportáveis em PDF.
+- Controlo do Dia: guião do dia, equipa e momentos-chave a partir do telemóvel.
+- Tarefas & Checklist: prazos e responsáveis, ligados a fornecedores e pagamentos.
+- Música & Momentos: escolher músicas por momento e partilhar com a banda/DJ.
+
+## Inteligência artificial (bastidores)
+
+- Copiloto do casamento: conversa e executa ações no cockpit (marcar pagamentos, criar tarefas, atualizar mesas).
+- Análise de contratos por IA (extrai datas, valores e prazos).
+- Sugestão de tarefas conforme a fase do planeamento.
+- Extração de músicas das listas dos fornecedores, para ouvir dentro da plataforma.
+
+## Bastidores e confiança
+
+- Equipa & permissões (papéis e acessos por página).
+- Relatórios & exportações (catering em PDF, pagamentos em CSV).
+- Privacidade & RGPD: dados alojados na Europa e apagados após o casamento.
+
+## Notas
+
+- Algumas funcionalidades voltadas ao convidado são reveladas apenas em demonstração ou após o casamento dos fundadores.
+- Acesso: mediante pedido em https://weddingos.pt (secção "Pedir acesso").
