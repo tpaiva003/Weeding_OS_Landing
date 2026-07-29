@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { StructuredData } from "@/components/structured-data";
 
 const fraunces = Fraunces({
@@ -79,6 +81,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <StructuredData />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { IconArrow, IconCheck } from "./icons";
 
 /**
@@ -65,11 +66,13 @@ export function Waitlist() {
         body: JSON.stringify({ name, email, date, problems }),
       });
       if (res.ok) {
+        track("pedir_acesso", { via: "api", motivos: problems.length });
         setStatus("sent");
         return;
       }
       // Backend not configured (501) → graceful fallback to the mail client.
       if (res.status === 501) {
+        track("pedir_acesso", { via: "mailto", motivos: problems.length });
         openMailto();
         setStatus("mailto");
         return;
@@ -77,6 +80,7 @@ export function Waitlist() {
       setStatus("error");
     } catch {
       // Network error → still let the request go through via mailto.
+      track("pedir_acesso", { via: "mailto", motivos: problems.length });
       openMailto();
       setStatus("mailto");
     }
