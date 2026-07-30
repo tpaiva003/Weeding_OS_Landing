@@ -62,7 +62,7 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"Wedding OS — Acesso" <${user}>`,
+      from: `"Wedding OS · Acesso" <${user}>`,
       to,
       replyTo: email,
       subject: `Pedido de acesso: ${name}`,
