@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "./faq-data";
+import { faqsByLang } from "./faq-data";
+import { useLang } from "./i18n";
+
+const COPY = {
+  pt: { eyebrow: "Perguntas frequentes", title: "Ainda com dúvidas?" },
+  en: { eyebrow: "Frequently asked", title: "Still have questions?" },
+};
 
 function FaqItem({
   q,
@@ -58,16 +64,19 @@ function FaqItem({
 }
 
 export function Faq() {
+  const { lang } = useLang();
+  const t = COPY[lang];
+  const faqs = faqsByLang[lang];
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   return (
     <section id="faq" className="scroll-mt-20 border-t border-ivory-300/60">
       <div className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold-600">
-            Perguntas frequentes
+            {t.eyebrow}
           </p>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-ink-900 sm:text-[2.6rem]">
-            Ainda com dúvidas?
+            {t.title}
           </h2>
         </div>
         <div className="mt-12">

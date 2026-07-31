@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { StructuredData } from "@/components/structured-data";
+import { LanguageProvider } from "@/components/i18n";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -80,7 +81,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <StructuredData />
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
         <SpeedInsights />
       </body>
