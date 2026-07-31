@@ -1,8 +1,41 @@
+"use client";
+
 import { Reveal } from "./reveal";
 import { DashboardMock, PhoneInvite } from "./mockups";
 import { IconArrow } from "./icons";
+import { useLang } from "./i18n";
+
+const COPY = {
+  pt: {
+    badge: "Uma plataforma. Todo o casamento.",
+    titleA: "O sistema operativo",
+    titleB: "do vosso",
+    titleWord: "casamento",
+    leadA: "Convidados, orçamento, fornecedores e plano de mesas:",
+    leadStrong: "tudo num só sítio",
+    leadB: ". E muito mais a chegar, do «sim» à última dança.",
+    ctaPrimary: "Pedir acesso antecipado",
+    ctaSecondary: "Ver os módulos",
+    tags: ["Módulos integrados", "Tudo ligado entre si", "Pensado para o telemóvel"],
+  },
+  en: {
+    badge: "One platform. The whole wedding.",
+    titleA: "The operating system",
+    titleB: "for your",
+    titleWord: "wedding",
+    leadA: "Guests, budget, suppliers and seating plan:",
+    leadStrong: "all in one place",
+    leadB: ". And much more on the way, from the «I do» to the last dance.",
+    ctaPrimary: "Request early access",
+    ctaSecondary: "See the modules",
+    tags: ["Integrated modules", "Everything connected", "Built for mobile"],
+  },
+};
 
 export function Hero() {
+  const { lang } = useLang();
+  const t = COPY[lang];
+
   return (
     <section id="top" className="relative overflow-hidden paper">
       {/* soft glow */}
@@ -18,17 +51,17 @@ export function Hero() {
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-olive-200/70 bg-white/[0.05] px-3.5 py-1.5 text-xs font-medium text-olive-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
-                Uma plataforma. Todo o casamento.
+                {t.badge}
               </span>
             </Reveal>
 
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl">
-                O sistema operativo
+                {t.titleA}
                 <br />
-                do vosso{" "}
+                {t.titleB}{" "}
                 <span className="relative whitespace-nowrap text-olive-700">
-                  casamento
+                  {t.titleWord}
                   <svg
                     aria-hidden
                     viewBox="0 0 200 12"
@@ -50,11 +83,9 @@ export function Hero() {
 
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                Convidados, orçamento, fornecedores e plano de mesas:{" "}
-                <span className="font-medium text-ink-900">
-                  tudo num só sítio
-                </span>
-                . E muito mais a chegar, do «sim» à última dança.
+                {t.leadA}{" "}
+                <span className="font-medium text-ink-900">{t.leadStrong}</span>
+                {t.leadB}
               </p>
             </Reveal>
 
@@ -64,32 +95,26 @@ export function Hero() {
                   href="#acesso"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-olive-700 px-7 py-3.5 text-base font-semibold text-[#17130a] shadow-[var(--shadow-soft)] transition-colors hover:bg-olive-800"
                 >
-                  Pedir acesso antecipado
+                  {t.ctaPrimary}
                   <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a
                   href="#modulos"
                   className="inline-flex items-center justify-center rounded-full border border-olive-700/40 bg-white/[0.04] px-7 py-3.5 text-base font-semibold text-ink-900 transition-colors hover:bg-white/[0.08]"
                 >
-                  Ver os módulos
+                  {t.ctaSecondary}
                 </a>
               </div>
             </Reveal>
 
             <Reveal delay={320}>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-500">
-                <span className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-olive-500" />
-                  Módulos integrados
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-olive-500" />
-                  Tudo ligado entre si
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-olive-500" />
-                  Pensado para o telemóvel
-                </span>
+                {t.tags.map((tag) => (
+                  <span key={tag} className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-olive-500" />
+                    {tag}
+                  </span>
+                ))}
               </div>
             </Reveal>
           </div>

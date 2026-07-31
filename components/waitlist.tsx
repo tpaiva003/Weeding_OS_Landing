@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { track } from "@vercel/analytics";
 import { IconArrow, IconCheck } from "./icons";
+import { useLang } from "./i18n";
 
 /**
  * Early-access capture. Posts to /api/access, which emails the request via
@@ -12,18 +13,101 @@ import { IconArrow, IconCheck } from "./icons";
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weddingos.pt";
 
-const PROBLEMS = [
-  "Gerir convidados e confirmações (RSVP)",
-  "Plano de mesas",
-  "Orçamento e fornecedores",
-  "Catering e restrições alimentares",
-  "Convidados internacionais",
-  "Só quero perceber melhor",
-];
+const COPY = {
+  pt: {
+    problems: [
+      "Gerir convidados e confirmações (RSVP)",
+      "Plano de mesas",
+      "Orçamento e fornecedores",
+      "Catering e restrições alimentares",
+      "Convidados internacionais",
+      "Só quero perceber melhor",
+    ],
+    heading: "Prontos para planear com calma?",
+    sub: "Pede acesso antecipado ao Wedding OS. Dizemos-te como podes usar a plataforma no vosso casamento.",
+    bullets: [
+      "Convidados, RSVP e plano de mesas",
+      "Orçamento, fornecedores e catering",
+      "Novas funcionalidades a chegar",
+    ],
+    nameLabel: "Nome",
+    namePlaceholder: "Clara & Tiago",
+    emailLabel: "Email",
+    emailPlaceholder: "voces@email.com",
+    dateLabel: "Data do casamento",
+    optional: "(opcional)",
+    problemsLegend: "O que procuram resolver?",
+    submit: "Pedir acesso",
+    submitting: "A enviar…",
+    sentTitle: "Pedido enviado!",
+    almostTitle: "Quase lá!",
+    sentBody:
+      "Recebemos o vosso pedido. Respondemos pessoalmente, em breve.",
+    almostBody:
+      "Abrimos o teu email com o pedido pré-preenchido. É só enviar: respondemos em breve.",
+    errorA: "Não foi possível enviar agora. Tenta de novo ou escreve para ",
+    reassurance: "Sem compromisso. Respondemos pessoalmente.",
+    // mailto body
+    mailSubject: "Pedido de acesso",
+    mailGreeting: "Olá,",
+    mailIntro: "Gostaria de acesso antecipado ao Wedding OS.",
+    mailName: "Nome",
+    mailEmail: "Email",
+    mailDate: "Data do casamento",
+    mailProblems: "O que procuro resolver:",
+    mailNone: "(não indicado)",
+    mailThanks: "Obrigado!",
+  },
+  en: {
+    problems: [
+      "Managing guests and confirmations (RSVP)",
+      "Seating plan",
+      "Budget and suppliers",
+      "Catering and dietary needs",
+      "International guests",
+      "Just want to understand it better",
+    ],
+    heading: "Ready to plan calmly?",
+    sub: "Request early access to Wedding OS. We'll tell you how you can use the platform for your wedding.",
+    bullets: [
+      "Guests, RSVP and seating plan",
+      "Budget, suppliers and catering",
+      "New features on the way",
+    ],
+    nameLabel: "Name",
+    namePlaceholder: "Clara & Tiago",
+    emailLabel: "Email",
+    emailPlaceholder: "you@email.com",
+    dateLabel: "Wedding date",
+    optional: "(optional)",
+    problemsLegend: "What are you looking to solve?",
+    submit: "Request access",
+    submitting: "Sending…",
+    sentTitle: "Request sent!",
+    almostTitle: "Almost there!",
+    sentBody: "We've received your request. We'll reply personally, soon.",
+    almostBody:
+      "We've opened your email with the request pre-filled. Just hit send: we'll reply soon.",
+    errorA: "We couldn't send just now. Try again or write to ",
+    reassurance: "No commitment. We reply personally.",
+    // mailto body
+    mailSubject: "Access request",
+    mailGreeting: "Hello,",
+    mailIntro: "I'd like early access to Wedding OS.",
+    mailName: "Name",
+    mailEmail: "Email",
+    mailDate: "Wedding date",
+    mailProblems: "What I'm looking to solve:",
+    mailNone: "(not specified)",
+    mailThanks: "Thank you!",
+  },
+};
 
 type Status = "idle" | "sending" | "sent" | "mailto" | "error";
 
 export function Waitlist() {
+  const { lang } = useLang();
+  const t = COPY[lang];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
@@ -37,20 +121,20 @@ export function Waitlist() {
   }
 
   function openMailto() {
-    const subject = encodeURIComponent(`Pedido de acesso: ${name}`);
+    const subject = encodeURIComponent(`${t.mailSubject}: ${name}`);
     const lines = [
-      "Olá,",
+      t.mailGreeting,
       "",
-      "Gostaria de acesso antecipado ao Wedding OS.",
+      t.mailIntro,
       "",
-      `Nome: ${name}`,
-      `Email: ${email}`,
-      `Data do casamento: ${date || "-"}`,
+      `${t.mailName}: ${name}`,
+      `${t.mailEmail}: ${email}`,
+      `${t.mailDate}: ${date || "-"}`,
       "",
-      "O que procuro resolver:",
-      ...(problems.length ? problems.map((p) => `- ${p}`) : ["- (não indicado)"]),
+      t.mailProblems,
+      ...(problems.length ? problems.map((p) => `- ${p}`) : [`- ${t.mailNone}`]),
       "",
-      "Obrigado!",
+      t.mailThanks,
     ];
     const body = encodeURIComponent(lines.join("\n"));
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
@@ -95,18 +179,13 @@ export function Waitlist() {
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="text-ivory-50">
               <h2 className="font-display text-3xl font-semibold leading-tight sm:text-4xl">
-                Prontos para planear com calma?
+                {t.heading}
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-ivory-100/90">
-                Pede acesso antecipado ao Wedding OS. Dizemos-te como podes usar
-                a plataforma no vosso casamento.
+                {t.sub}
               </p>
               <ul className="mt-7 space-y-2.5 text-[15px] text-ivory-100/90">
-                {[
-                  "Convidados, RSVP e plano de mesas",
-                  "Orçamento, fornecedores e catering",
-                  "Novas funcionalidades a chegar",
-                ].map((p) => (
+                {t.bullets.map((p) => (
                   <li key={p} className="flex items-center gap-3">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-ivory-50/15 text-gold-400">
                       <IconCheck className="h-3.5 w-3.5" />
@@ -124,12 +203,10 @@ export function Waitlist() {
                     <IconCheck className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 font-display text-xl font-semibold text-ink-900">
-                    {status === "sent" ? "Pedido enviado!" : "Quase lá!"}
+                    {status === "sent" ? t.sentTitle : t.almostTitle}
                   </h3>
                   <p className="mt-2 text-sm text-ink-700">
-                    {status === "sent"
-                      ? "Recebemos o vosso pedido. Respondemos pessoalmente, em breve."
-                      : "Abrimos o teu email com o pedido pré-preenchido. É só enviar: respondemos em breve."}
+                    {status === "sent" ? t.sentBody : t.almostBody}
                   </p>
                 </div>
               ) : (
@@ -139,7 +216,7 @@ export function Waitlist() {
                       htmlFor="name"
                       className="mb-1.5 block text-xs font-medium text-ink-700"
                     >
-                      Nome
+                      {t.nameLabel}
                     </label>
                     <input
                       id="name"
@@ -147,7 +224,7 @@ export function Waitlist() {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="Clara & Tiago"
+                      placeholder={t.namePlaceholder}
                       className="w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
                     />
                   </div>
@@ -156,7 +233,7 @@ export function Waitlist() {
                       htmlFor="email"
                       className="mb-1.5 block text-xs font-medium text-ink-700"
                     >
-                      Email
+                      {t.emailLabel}
                     </label>
                     <input
                       id="email"
@@ -164,7 +241,7 @@ export function Waitlist() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="voces@email.com"
+                      placeholder={t.emailPlaceholder}
                       className="w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-3 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
                     />
                   </div>
@@ -173,8 +250,8 @@ export function Waitlist() {
                       htmlFor="date"
                       className="mb-1.5 block text-xs font-medium text-ink-700"
                     >
-                      Data do casamento{" "}
-                      <span className="text-ink-500/70">(opcional)</span>
+                      {t.dateLabel}{" "}
+                      <span className="text-ink-500/70">{t.optional}</span>
                     </label>
                     <input
                       id="date"
@@ -187,11 +264,11 @@ export function Waitlist() {
 
                   <fieldset>
                     <legend className="mb-2 block text-xs font-medium text-ink-700">
-                      O que procuram resolver?{" "}
-                      <span className="text-ink-500/70">(opcional)</span>
+                      {t.problemsLegend}{" "}
+                      <span className="text-ink-500/70">{t.optional}</span>
                     </legend>
                     <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                      {PROBLEMS.map((p) => {
+                      {t.problems.map((p) => {
                         const active = problems.includes(p);
                         return (
                           <button
@@ -226,19 +303,19 @@ export function Waitlist() {
                     disabled={status === "sending"}
                     className="group flex w-full items-center justify-center gap-2 rounded-xl bg-olive-700 px-6 py-3.5 text-base font-semibold text-[#17130a] transition-colors hover:bg-olive-800 disabled:opacity-70"
                   >
-                    {status === "sending" ? "A enviar…" : "Pedir acesso"}
+                    {status === "sending" ? t.submitting : t.submit}
                     {status !== "sending" && (
                       <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     )}
                   </button>
                   {status === "error" && (
                     <p className="text-center text-xs text-[#e0917f]">
-                      Não foi possível enviar agora. Tenta de novo ou escreve
-                      para {CONTACT_EMAIL}.
+                      {t.errorA}
+                      {CONTACT_EMAIL}.
                     </p>
                   )}
                   <p className="text-center text-xs text-ink-500">
-                    Sem compromisso. Respondemos pessoalmente.
+                    {t.reassurance}
                   </p>
                 </form>
               )}

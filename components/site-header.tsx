@@ -2,19 +2,24 @@
 
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
+import { LangToggle } from "./lang-toggle";
+import { useLang } from "./i18n";
 
 const links = [
-  { href: "#historia", label: "História" },
-  { href: "#modulos", label: "Módulos" },
-  { href: "#bastidores", label: "Bastidores" },
-  { href: "#ia", label: "IA" },
-  { href: "#como-funciona", label: "Como funciona" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#historia", pt: "História", en: "Story" },
+  { href: "#modulos", pt: "Módulos", en: "Modules" },
+  { href: "#bastidores", pt: "Bastidores", en: "Backstage" },
+  { href: "#ia", pt: "IA", en: "AI" },
+  { href: "#como-funciona", pt: "Como funciona", en: "How it works" },
+  { href: "#faq", pt: "FAQ", en: "FAQ" },
 ];
 
 export function SiteHeader() {
+  const { lang } = useLang();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const cta = lang === "en" ? "Request access" : "Pedir acesso";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -50,46 +55,58 @@ export function SiteHeader() {
               href={l.href}
               className="text-sm font-medium text-ink-700 transition-colors hover:text-olive-700"
             >
-              {l.label}
+              {lang === "en" ? l.en : l.pt}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <LangToggle />
           <a
             href="#acesso"
             className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] shadow-sm transition-colors hover:bg-olive-800"
           >
-            Pedir acesso
+            {cta}
           </a>
         </div>
 
-        {/* mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full text-ink-900 md:hidden"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={open}
-        >
-          <div className="relative h-4 w-5">
-            <span
-              className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300 ${
-                open ? "translate-y-[7px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-200 ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-[14px] h-0.5 w-5 bg-current transition-transform duration-300 ${
-                open ? "-translate-y-[7px] -rotate-45" : ""
-              }`}
-            />
-          </div>
-        </button>
+        {/* mobile: toggle + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
+          <LangToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-ink-900"
+            aria-label={
+              open
+                ? lang === "en"
+                  ? "Close menu"
+                  : "Fechar menu"
+                : lang === "en"
+                  ? "Open menu"
+                  : "Abrir menu"
+            }
+            aria-expanded={open}
+          >
+            <div className="relative h-4 w-5">
+              <span
+                className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300 ${
+                  open ? "translate-y-[7px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-200 ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[14px] h-0.5 w-5 bg-current transition-transform duration-300 ${
+                  open ? "-translate-y-[7px] -rotate-45" : ""
+                }`}
+              />
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* mobile menu */}
@@ -103,7 +120,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-3 text-base font-medium text-ink-800 hover:bg-olive-50"
               >
-                {l.label}
+                {lang === "en" ? l.en : l.pt}
               </a>
             ))}
             <a
@@ -111,7 +128,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-olive-700 px-5 py-3.5 text-center text-base font-semibold text-[#17130a]"
             >
-              Pedir acesso
+              {cta}
             </a>
           </nav>
         </div>
