@@ -4,20 +4,16 @@ import { Reveal } from "./reveal";
 import { useLang } from "./i18n";
 
 /**
- * Origin story: Wedding OS was born from a real couple, Clara & Tiago,
- * planning their own wedding. Founder-market fit builds trust right after
- * the Problem section and before the modules.
+ * Origin story: Wedding OS was born from a real couple planning their own
+ * wedding. Founder-market fit builds trust right after the Problem section
+ * and before the modules. Told first-person and name-free by choice.
  */
 const COPY = {
   pt: {
     eyebrow: "A nossa história",
     title: "Nasceu de um casamento a sério. O nosso.",
     p1: {
-      a: "Somos a ",
-      clara: "Clara",
-      mid1: " e o ",
-      tiago: "Tiago",
-      mid2: ". Conhecemo-nos na escola e estamos juntos ",
+      a: "Somos um casal. Conhecemo-nos na escola e estamos juntos ",
       since: "desde 2012",
       mid3:
         ". Quando decidimos casar, cheios de vontade, poucas semanas depois estávamos afogados em listas. Percebemos cedo que planear um casamento não é um evento: são ",
@@ -34,8 +30,8 @@ const COPY = {
       "Então construímos aquilo que gostávamos de ter tido desde o início: um sistema que junta tudo, fala com os convidados por nós e nos devolve o que mais importa: ",
     present: "estar presentes no nosso próprio dia",
     p3b: ". Chamámos-lhe Wedding OS. E agora é vosso também.",
-    signature: "Clara & Tiago",
-    role: "Fundadores · casam a 4 de Outubro de 2026, na Quinta da Pedra Salgada",
+    signature: "Os fundadores do Wedding OS",
+    role: "Casam a 4 de Outubro de 2026, na Quinta da Pedra Salgada",
     quote:
       "O problema nunca foi falta de amor. Era falta de um sítio só para tudo o que tínhamos de decidir.",
     stats: [
@@ -48,11 +44,7 @@ const COPY = {
     eyebrow: "Our story",
     title: "Born from a real wedding. Ours.",
     p1: {
-      a: "We're ",
-      clara: "Clara",
-      mid1: " and ",
-      tiago: "Tiago",
-      mid2: ". We met at school and have been together ",
+      a: "We're a couple. We met at school and have been together ",
       since: "since 2012",
       mid3:
         ". When we decided to get married, full of excitement, a few weeks later we were drowning in lists. We realised early that planning a wedding isn't an event: it's ",
@@ -69,8 +61,8 @@ const COPY = {
       "So we built what we wished we'd had from the start: a system that brings everything together, talks to the guests for us, and gives us back what matters most: ",
     present: "being present on our own day",
     p3b: ". We called it Wedding OS. And now it's yours too.",
-    signature: "Clara & Tiago",
-    role: "Founders · marrying on 4 October 2026, at Quinta da Pedra Salgada",
+    signature: "The founders of Wedding OS",
+    role: "Marrying on 4 October 2026, at Quinta da Pedra Salgada",
     quote:
       "The problem was never a lack of love. It was the lack of one place for everything we had to decide.",
     stats: [
@@ -102,10 +94,6 @@ export function Story() {
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-700">
               <p>
                 {p1.a}
-                <span className="font-medium text-olive-700">{p1.clara}</span>
-                {p1.mid1}
-                <span className="font-medium text-olive-700">{p1.tiago}</span>
-                {p1.mid2}
                 <span className="font-medium text-ink-900">{p1.since}</span>
                 {p1.mid3}
                 <span className="font-medium text-ink-900">{p1.decisions}</span>

@@ -1,6 +1,6 @@
 # Wedding OS
 
-> Wedding OS é o sistema operativo do casamento: uma plataforma que reúne, num só sítio, tudo o que um casal precisa de decidir e organizar. Nasceu do casamento da Clara & do Tiago, que ao planear o próprio casamento sentiram a dificuldade de todas as decisões e tarefas e construíram a ferramenta que gostariam de ter tido.
+> Wedding OS é o sistema operativo do casamento: uma plataforma que reúne, num só sítio, tudo o que um casal precisa de decidir e organizar. Nasceu do casamento dos seus fundadores, um casal que, ao planear o próprio casamento, sentiu a dificuldade de todas as decisões e tarefas e construiu a ferramenta que gostaria de ter tido.
 
 - Site: https://weddingos.pt
 - Instagram: https://instagram.com/weddingos.pt
