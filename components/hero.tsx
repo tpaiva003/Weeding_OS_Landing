@@ -8,26 +8,34 @@ import { useLang } from "./i18n";
 const COPY = {
   pt: {
     badge: "Uma plataforma. Todo o casamento.",
-    titleA: "O sistema operativo",
-    titleB: "do vosso",
-    titleWord: "casamento",
-    leadA: "Convidados, orçamento, fornecedores e plano de mesas:",
-    leadStrong: "tudo num só sítio",
-    leadB: ". E muito mais a chegar, do «sim» à última dança.",
+    line1a: "Planeiem o ",
+    line1word: "casamento",
+    line1b: ".",
+    line2: "Nós tratamos do trabalho chato.",
+    leadA: "Convidados, orçamento, fornecedores e plano de mesas ",
+    leadStrong: "num só sítio",
+    leadB:
+      ", com um copiloto de IA que executa as tarefas por vocês. Menos separadores, mais presença.",
     ctaPrimary: "Pedir acesso antecipado",
     ctaSecondary: "Ver os módulos",
+    microcopy: "Grátis para os primeiros casais · 2 minutos, sem compromisso.",
+    madeBy: "Feito por um casal que está mesmo a casar.",
     tags: ["Módulos integrados", "Tudo ligado entre si", "Pensado para o telemóvel"],
   },
   en: {
     badge: "One platform. The whole wedding.",
-    titleA: "The operating system",
-    titleB: "for your",
-    titleWord: "wedding",
-    leadA: "Guests, budget, suppliers and seating plan:",
-    leadStrong: "all in one place",
-    leadB: ". And much more on the way, from the «I do» to the last dance.",
+    line1a: "Plan the ",
+    line1word: "wedding",
+    line1b: ".",
+    line2: "We'll handle the boring bits.",
+    leadA: "Guests, budget, suppliers and seating plan ",
+    leadStrong: "in one place",
+    leadB:
+      ", with an AI copilot that runs the tasks for you. Fewer tabs, more presence.",
     ctaPrimary: "Request early access",
     ctaSecondary: "See the modules",
+    microcopy: "Free for the first couples · 2 minutes, no commitment.",
+    madeBy: "Built by a couple who are actually getting married.",
     tags: ["Integrated modules", "Everything connected", "Built for mobile"],
   },
 };
@@ -57,11 +65,9 @@ export function Hero() {
 
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl">
-                {t.titleA}
-                <br />
-                {t.titleB}{" "}
+                {t.line1a}
                 <span className="relative whitespace-nowrap text-olive-700">
-                  {t.titleWord}
+                  {t.line1word}
                   <svg
                     aria-hidden
                     viewBox="0 0 200 12"
@@ -77,13 +83,15 @@ export function Hero() {
                     />
                   </svg>
                 </span>
-                .
+                {t.line1b}
+                <br />
+                {t.line2}
               </h1>
             </Reveal>
 
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {t.leadA}{" "}
+                {t.leadA}
                 <span className="font-medium text-ink-900">{t.leadStrong}</span>
                 {t.leadB}
               </p>
@@ -107,8 +115,19 @@ export function Hero() {
               </div>
             </Reveal>
 
-            <Reveal delay={320}>
-              <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-500">
+            <Reveal delay={300}>
+              <p className="mt-4 text-sm text-ink-500">{t.microcopy}</p>
+            </Reveal>
+
+            <Reveal delay={340}>
+              <p className="mt-5 flex items-center gap-2 text-sm font-medium italic text-olive-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+                {t.madeBy}
+              </p>
+            </Reveal>
+
+            <Reveal delay={400}>
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-500">
                 {t.tags.map((tag) => (
                   <span key={tag} className="flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-olive-500" />
