@@ -16,7 +16,7 @@ const COPY = {
     eyebrow: "A nossa história",
     title: "Nasceu de um casamento a sério. O nosso.",
     p1: {
-      a: "Sou o Tiago. Eu e a minha companheira conhecemo-nos na escola e estamos juntos ",
+      a: "Conhecemo-nos na escola e estamos juntos ",
       since: "desde 2012",
       mid3:
         ". Quando decidimos casar, cheios de vontade, poucas semanas depois estávamos afogados em listas. Percebi cedo que planear um casamento não é um evento: são ",
@@ -24,13 +24,13 @@ const COPY = {
       end: " e tarefas a competir com a nossa vida.",
     },
     p2a:
-      "Convidados, mesas, menus, alergias, fornecedores, pagamentos. E ainda família e amigos que vinham de fora e não falavam português. Cada tarefa vivia numa app diferente, cada decisão exigia abrir cinco separadores. Trabalho com gestão de projetos e, como economista, reparo sempre onde se perde tempo e valor: manter tudo em Excel, WhatsApp e mil separadores era deitar fora dezenas de horas em trabalho pouco eficiente. Passávamos mais tempo a ",
-    manage: "gerir",
-    p2b: " o nosso casamento do que a ",
-    savor: "saboreá-lo",
-    p2c: ".",
+      "Convidados, mesas, menus, alergias, fornecedores, pagamentos. E ainda família e amigos que vinham de fora e não falavam português. Cada tarefa vivia numa app diferente, cada decisão exigia abrir cinco separadores. Trabalho com gestão de projetos e, como economista, reparo sempre onde se perde tempo e valor: manter tudo em Excel, WhatsApp e mil separadores era deitar fora dezenas de horas em trabalho pouco eficiente. A esse ritmo, íamos passar mais tempo no ",
+    manage: "trabalho administrativo",
+    p2b: " da preparação do que a ",
+    savor: "preparar e a viver",
+    p2c: " o casamento de verdade.",
     p3a:
-      "Então construí aquilo que gostava de ter tido desde o início: um sistema que junta tudo, fala com os convidados por nós e nos devolve o que mais importa: ",
+      "Então construí aquilo que gostava de ter tido desde o início: um sistema que junta tudo, trata da logística por nós e nos devolve o que mais importa: ",
     present: "estar presentes no nosso próprio dia",
     p3b: ". Chamámos-lhe Wedding OS. E agora é vosso também.",
     signature: "Tiago, fundador do Wedding OS",
@@ -47,7 +47,7 @@ const COPY = {
     eyebrow: "Our story",
     title: "Born from a real wedding. Ours.",
     p1: {
-      a: "I'm Tiago. My partner and I met at school and have been together ",
+      a: "We met at school and have been together ",
       since: "since 2012",
       mid3:
         ". When we decided to get married, full of excitement, a few weeks later we were drowning in lists. I realised early that planning a wedding isn't an event: it's ",
@@ -55,13 +55,13 @@ const COPY = {
       end: " and tasks competing with our lives.",
     },
     p2a:
-      "Guests, tables, menus, allergies, suppliers, payments. And family and friends coming from abroad who didn't speak Portuguese. Each task lived in a different app, each decision meant opening five tabs. I work in project management and, as an economist, I always notice where time and value leak away: keeping it all in Excel, WhatsApp and a thousand tabs meant throwing away dozens of hours on inefficient work. We spent more time ",
-    manage: "managing",
-    p2b: " our wedding than ",
-    savor: "savouring",
-    p2c: " it.",
+      "Guests, tables, menus, allergies, suppliers, payments. And family and friends coming from abroad who didn't speak Portuguese. Each task lived in a different app, each decision meant opening five tabs. I work in project management and, as an economist, I always notice where time and value leak away: keeping it all in Excel, WhatsApp and a thousand tabs meant throwing away dozens of hours on inefficient work. At that rate, we'd spend more time on the ",
+    manage: "administrative work",
+    p2b: " of preparing than actually ",
+    savor: "preparing and living",
+    p2c: " the wedding itself.",
     p3a:
-      "So I built what I wished we'd had from the start: a system that brings everything together, talks to the guests for us, and gives us back what matters most: ",
+      "So I built what I wished we'd had from the start: a system that brings everything together, handles the logistics for us, and gives us back what matters most: ",
     present: "being present on our own day",
     p3b: ". We called it Wedding OS. And now it's yours too.",
     signature: "Tiago, founder of Wedding OS",
