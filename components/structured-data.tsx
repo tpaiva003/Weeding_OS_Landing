@@ -16,10 +16,10 @@ export function StructuredData() {
       name: "Wedding OS",
       url: SITE_URL,
       description:
-        "Wedding OS é o sistema operativo do casamento: convidados e RSVP, plano de mesas, fornecedores e pagamentos, orçamento, catering e um copiloto de IA que executa ações. Nasceu do casamento da Clara & do Tiago.",
+        "Wedding OS é o sistema operativo do casamento: convidados e RSVP, plano de mesas, fornecedores e pagamentos, orçamento, catering e um copiloto de IA que executa ações. Nasceu do casamento do seu fundador, Tiago.",
       email: "tiago.paiva@weddingos.pt",
       sameAs: [INSTAGRAM_URL],
-      founder: [{ "@type": "Person", name: "Clara" }, { "@type": "Person", name: "Tiago" }],
+      founder: [{ "@type": "Person", name: "Tiago" }],
       areaServed: "PT",
     },
     {
