@@ -21,19 +21,19 @@ const COPY = {
     cards: [
       {
         title: "Noivos",
-        desc: "Planeiem o vosso casamento com calma: convidados, orçamento, fornecedores e mesas num só sítio. Menos administração, mais presença no grande dia.",
+        desc: "Planeiem com calma: convidados, orçamento, fornecedores e mesas num só sítio. Menos administração, mais presença no dia que é vosso.",
         cta: "Pedir acesso",
         href: "#acesso",
       },
       {
         title: "Wedding planners",
-        desc: "Gere todos os teus casamentos num só sítio, com a tua equipa. Menos horas de admin por evento e uma imagem impecável perante os clientes.",
+        desc: "Gere todos os teus casamentos num só sistema, com a tua equipa. Recupera horas em cada evento e mostra aos clientes uma organização impecável.",
         cta: "Para wedding planners",
         href: "/wedding-planners",
       },
       {
         title: "Quintas & espaços",
-        desc: "Coordena todos os eventos da tua quinta: fornecedores, mesas à medida da tua sala e um dia sem falhas. Dá mais valor a cada casamento que recebes.",
+        desc: "Coordena todos os eventos da tua quinta, com mesas à medida da tua sala. Cada casamento sem falhas é a tua melhor publicidade.",
         cta: "Para quintas",
         href: "/quintas",
       },
@@ -47,19 +47,19 @@ const COPY = {
     cards: [
       {
         title: "Couples",
-        desc: "Plan your wedding calmly: guests, budget, suppliers and tables in one place. Less admin, more presence on the big day.",
+        desc: "Plan calmly: guests, budget, suppliers and tables in one place. Less admin, more presence on the day that's yours.",
         cta: "Request access",
         href: "#acesso",
       },
       {
         title: "Wedding planners",
-        desc: "Run all your weddings in one place, with your team. Fewer admin hours per event and a flawless image in front of your clients.",
+        desc: "Run all your weddings in one system, with your team. Win back hours on every event and show clients flawless organisation.",
         cta: "For wedding planners",
         href: "/wedding-planners",
       },
       {
         title: "Venues & estates",
-        desc: "Coordinate every event at your venue: suppliers, seating tailored to your room, and a flawless day. Add value to every wedding you host.",
+        desc: "Coordinate every event at your venue, with seating tailored to your room. Every flawless wedding is your best advertising.",
         cta: "For venues",
         href: "/quintas",
       },

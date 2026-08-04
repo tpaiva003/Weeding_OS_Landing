@@ -19,41 +19,43 @@ const COPY = {
       h1a: "Todos os teus casamentos, ",
       h1word: "num só sistema",
       h1b: ".",
-      sub: "Menos horas de admin por evento, uma equipa alinhada e clientes impressionados. O Wedding OS dá-te o cockpit para gerires cada casamento de ponta a ponta.",
+      sub: "Cada evento organizado ao detalhe, a tua equipa a par de tudo e clientes que confiam em ti. O Wedding OS trata da parte administrativa para te concentrares no que só tu fazes: criar dias memoráveis.",
       perfil: "planner",
       benefits: [
         "Cada casamento no seu espaço, com convidados, orçamento, fornecedores e mesas ligados entre si.",
-        "A tua equipa com acessos e permissões por papel, sem partilhar palavras-passe.",
-        "Relatórios e exportações prontos a entregar ao cliente (catering em PDF, pagamentos em CSV).",
-        "Um copiloto de IA que lê contratos, sugere tarefas e executa ações, para poupares horas por evento.",
+        "A tua equipa com acessos por papel, sem partilhar palavras-passe nem perder o controlo.",
+        "Relatórios e exportações prontos a entregar ao cliente: catering em PDF, pagamentos em CSV.",
+        "Um copiloto de IA que lê contratos, sugere tarefas e executa ações, e te devolve horas em cada evento.",
       ],
-      valueTitle: "Menos administração. Mais casamentos geridos com folga.",
+      valueTitle: "Menos horas em admin. Mais casamentos, geridos com folga.",
       valueBody:
-        "Deixa o trabalho repetitivo com a plataforma e concentra-te no que só tu fazes: cuidar dos noivos e do dia.",
+        "Imagina fechar a semana sem prazos esquecidos nem mil separadores abertos. É essa folga que te deixa aceitar mais casamentos sem abdicar da qualidade que te distingue.",
     },
     venue: {
       eyebrow: "Para quintas & espaços",
       h1a: "Todos os eventos da tua quinta, ",
       h1word: "sob controlo",
       h1b: ".",
-      sub: "Coordena fornecedores, mesas à medida da tua sala e o guião do dia. Dá a cada casal uma experiência impecável e mais valor a cada evento que recebes.",
+      sub: "Fornecedores, mesas à medida da tua sala e o guião do dia, tudo alinhado. Dá a cada casal uma experiência impecável e transforma cada evento na tua melhor recomendação.",
       perfil: "quinta",
       benefits: [
         "Templates de mesas à medida da tua sala, prontos a reutilizar em cada evento.",
         "Fornecedores, pagamentos e prazos de cada evento organizados num só sítio.",
         "Guião do dia e equipa coordenados a partir do telemóvel, para tudo correr sem falhas.",
-        "Relatórios e exportações que facilitam a coordenação com catering e parceiros.",
+        "Relatórios e exportações que simplificam a coordenação com catering e parceiros.",
       ],
       valueTitle: "Mais valor em cada casamento que recebes.",
       valueBody:
-        "Uma quinta organizada transmite confiança. Oferece aos noivos uma experiência de planeamento à altura do teu espaço.",
+        "Uma quinta que corre sem falhas fica na memória, e nas recomendações. Oferece aos noivos uma experiência à altura do teu espaço e deixa o boca a boca fazer o resto.",
     },
     benefitsEyebrow: "Porquê o Wedding OS",
+    proof: "Feito por quem já viveu o caos de organizar um casamento.",
     ctaPrimary: "Pedir acesso",
     ctaSecondary: "Ver os módulos",
-    bandTitle: "Vamos mostrar-te como encaixa no teu fluxo.",
+    bandTitle: "Vamos mostrar-te por dentro.",
     bandBody:
-      "Pede acesso antecipado. Respondemos pessoalmente e mostramos-te o Wedding OS por dentro.",
+      "Pede acesso antecipado. Respondemos pessoalmente e mostramos-te como o Wedding OS encaixa no teu dia a dia.",
+    bandReassurance: "Sem compromisso. Respondemos pessoalmente.",
   },
   en: {
     planner: {
@@ -61,24 +63,24 @@ const COPY = {
       h1a: "All your weddings, ",
       h1word: "in one system",
       h1b: ".",
-      sub: "Fewer admin hours per event, a team in sync and clients who are impressed. Wedding OS gives you the cockpit to run every wedding end to end.",
+      sub: "Every event organised down to the detail, your team on the same page and clients who trust you. Wedding OS handles the admin so you can focus on what only you do: creating memorable days.",
       perfil: "planner",
       benefits: [
         "Every wedding in its own space, with guests, budget, suppliers and tables connected.",
-        "Your team with role-based access and permissions, without sharing passwords.",
-        "Reports and exports ready to hand to the client (catering as PDF, payments as CSV).",
-        "An AI copilot that reads contracts, suggests tasks and runs actions, saving you hours per event.",
+        "Your team with role-based access, without sharing passwords or losing control.",
+        "Reports and exports ready to hand to the client: catering as PDF, payments as CSV.",
+        "An AI copilot that reads contracts, suggests tasks and runs actions, giving you hours back on every event.",
       ],
-      valueTitle: "Less admin. More weddings run with ease.",
+      valueTitle: "Less time on admin. More weddings, run with ease.",
       valueBody:
-        "Leave the repetitive work to the platform and focus on what only you do: caring for the couple and the day.",
+        "Picture closing the week with no missed deadlines and no thousand tabs open. That ease is what lets you take on more weddings without giving up the quality that sets you apart.",
     },
     venue: {
       eyebrow: "For venues & estates",
       h1a: "Every event at your venue, ",
       h1word: "under control",
       h1b: ".",
-      sub: "Coordinate suppliers, seating tailored to your room and the run-of-show. Give every couple a flawless experience and more value to every event you host.",
+      sub: "Suppliers, seating tailored to your room and the run-of-show, all aligned. Give every couple a flawless experience and turn each event into your best recommendation.",
       perfil: "quinta",
       benefits: [
         "Seating templates tailored to your room, ready to reuse for every event.",
@@ -88,14 +90,16 @@ const COPY = {
       ],
       valueTitle: "More value in every wedding you host.",
       valueBody:
-        "An organised venue inspires confidence. Give couples a planning experience worthy of your space.",
+        "A venue that runs flawlessly stays in the memory, and in the recommendations. Give couples an experience worthy of your space and let word of mouth do the rest.",
     },
     benefitsEyebrow: "Why Wedding OS",
+    proof: "Built by people who've lived the chaos of planning a wedding.",
     ctaPrimary: "Request access",
     ctaSecondary: "See the modules",
-    bandTitle: "Let us show you how it fits your workflow.",
+    bandTitle: "Let us show you the inside.",
     bandBody:
-      "Request early access. We reply personally and give you a look inside Wedding OS.",
+      "Request early access. We reply personally and show you how Wedding OS fits your day to day.",
+    bandReassurance: "No commitment. We reply personally.",
   },
 };
 
@@ -167,6 +171,12 @@ export function AudiencePage({ segment }: { segment: Segment }) {
                   </a>
                 </div>
               </Reveal>
+              <Reveal delay={320}>
+                <p className="mt-5 flex items-center gap-2 text-sm font-medium italic text-olive-700">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+                  {t.proof}
+                </p>
+              </Reveal>
             </div>
 
             <Reveal delay={200} className="relative">
@@ -226,6 +236,7 @@ export function AudiencePage({ segment }: { segment: Segment }) {
               {t.ctaPrimary}
               <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
+            <p className="mt-4 text-sm text-ivory-100/70">{t.bandReassurance}</p>
           </div>
         </div>
       </section>
