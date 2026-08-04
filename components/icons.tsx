@@ -23,6 +23,21 @@ function Base({ children, ...props }: IconProps & { children: React.ReactNode })
   );
 }
 
+export const IconHeart = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 20s-7-4.4-7-9.3A3.7 3.7 0 0 1 12 8a3.7 3.7 0 0 1 7 2.7c0 4.9-7 9.3-7 9.3z" />
+  </Base>
+);
+
+export const IconVenue = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M3 20h18" />
+    <path d="M5 20V10l7-4 7 4v10" />
+    <path d="M9 20v-5h6v5" />
+    <path d="M9 10.5h.01M15 10.5h.01" />
+  </Base>
+);
+
 export const IconTasks = (p: IconProps) => (
   <Base {...p}>
     <rect x="4" y="3.5" width="16" height="17" rx="2" />
