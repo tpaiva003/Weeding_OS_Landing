@@ -5,13 +5,14 @@ import { Logo } from "./logo";
 import { LangToggle } from "./lang-toggle";
 import { useLang } from "./i18n";
 
+// Absolute "/#…" hrefs so the nav also works from the audience subpages.
 const links = [
-  { href: "#historia", pt: "História", en: "Story" },
-  { href: "#modulos", pt: "Módulos", en: "Modules" },
-  { href: "#bastidores", pt: "Bastidores", en: "Backstage" },
-  { href: "#ia", pt: "IA", en: "AI" },
-  { href: "#como-funciona", pt: "Como funciona", en: "How it works" },
-  { href: "#faq", pt: "FAQ", en: "FAQ" },
+  { href: "/#para-quem", pt: "Para quem", en: "For whom" },
+  { href: "/#modulos", pt: "Módulos", en: "Modules" },
+  { href: "/#bastidores", pt: "Bastidores", en: "Backstage" },
+  { href: "/#ia", pt: "IA", en: "AI" },
+  { href: "/#como-funciona", pt: "Como funciona", en: "How it works" },
+  { href: "/#faq", pt: "FAQ", en: "FAQ" },
 ];
 
 export function SiteHeader() {
@@ -44,7 +45,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-center" aria-label="Wedding OS">
+        <a href="/" className="flex items-center" aria-label="Wedding OS">
           <Logo />
         </a>
 
@@ -63,7 +64,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-3 md:flex">
           <LangToggle />
           <a
-            href="#acesso"
+            href="/#acesso"
             className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] shadow-sm transition-colors hover:bg-olive-800"
           >
             {cta}
@@ -124,7 +125,7 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href="#acesso"
+              href="/#acesso"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-olive-700 px-5 py-3.5 text-center text-base font-semibold text-[#17130a]"
             >

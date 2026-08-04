@@ -15,22 +15,21 @@ const COPY = {
       {
         title: "Produto",
         links: [
-          { href: "#historia", label: "A nossa história" },
-          { href: "#modulos", label: "Módulos" },
-          { href: "#bastidores", label: "Bastidores" },
-          { href: "#ia", label: "IA" },
-          { href: "#a-chegar", label: "A chegar" },
-          { href: "#como-funciona", label: "Como funciona" },
-          { href: "#faq", label: "FAQ" },
+          { href: "/#historia", label: "A nossa história" },
+          { href: "/#para-quem", label: "Para quem é" },
+          { href: "/#modulos", label: "Módulos" },
+          { href: "/#bastidores", label: "Bastidores" },
+          { href: "/#ia", label: "IA" },
+          { href: "/#como-funciona", label: "Como funciona" },
+          { href: "/#faq", label: "FAQ" },
         ],
       },
       {
-        title: "Módulos",
+        title: "Para quem",
         links: [
-          { href: "#modulos", label: "Convidados & RSVP" },
-          { href: "#modulos", label: "Plano de mesas" },
-          { href: "#modulos", label: "Fornecedores" },
-          { href: "#modulos", label: "Catering & restrições" },
+          { href: "/#acesso", label: "Noivos" },
+          { href: "/wedding-planners", label: "Wedding planners" },
+          { href: "/quintas", label: "Quintas & espaços" },
         ],
       },
     ],
@@ -45,22 +44,21 @@ const COPY = {
       {
         title: "Product",
         links: [
-          { href: "#historia", label: "Our story" },
-          { href: "#modulos", label: "Modules" },
-          { href: "#bastidores", label: "Backstage" },
-          { href: "#ia", label: "AI" },
-          { href: "#a-chegar", label: "Coming soon" },
-          { href: "#como-funciona", label: "How it works" },
-          { href: "#faq", label: "FAQ" },
+          { href: "/#historia", label: "Our story" },
+          { href: "/#para-quem", label: "Who it's for" },
+          { href: "/#modulos", label: "Modules" },
+          { href: "/#bastidores", label: "Backstage" },
+          { href: "/#ia", label: "AI" },
+          { href: "/#como-funciona", label: "How it works" },
+          { href: "/#faq", label: "FAQ" },
         ],
       },
       {
-        title: "Modules",
+        title: "Who it's for",
         links: [
-          { href: "#modulos", label: "Guests & RSVP" },
-          { href: "#modulos", label: "Seating plan" },
-          { href: "#modulos", label: "Suppliers" },
-          { href: "#modulos", label: "Catering & dietary" },
+          { href: "/#acesso", label: "Couples" },
+          { href: "/wedding-planners", label: "Wedding planners" },
+          { href: "/quintas", label: "Venues & estates" },
         ],
       },
     ],
@@ -84,7 +82,7 @@ export function SiteFooter() {
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
-                href="#acesso"
+                href="/#acesso"
                 className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] transition-colors hover:bg-olive-800"
               >
                 {t.cta}
