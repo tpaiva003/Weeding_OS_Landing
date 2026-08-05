@@ -17,14 +17,15 @@ import { useLang } from "./i18n";
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weddingos.pt";
 
-type AudienceKey = "noivos" | "planner" | "quinta";
+type AudienceKey = "noivos" | "planner" | "quinta" | "outro";
 
 // Canonical labels sent to the inbox, so it reads consistently regardless
-// of the visitor's language.
+// of the visitor's language. "outro" falls back to the free-text value.
 const AUDIENCE_CANONICAL: Record<AudienceKey, string> = {
   noivos: "Noivos",
   planner: "Wedding planner",
   quinta: "Quinta",
+  outro: "Outro",
 };
 
 const COPY = {
@@ -49,7 +50,9 @@ const COPY = {
       noivos: "Noivos",
       planner: "Wedding planner",
       quinta: "Quinta / Espaço",
+      outro: "Outro",
     },
+    otherPlaceholder: "Ex.: fotógrafo, catering, curioso…",
     weddingsLegend: "Casamentos por ano",
     weddingsOptions: ["1–5", "6–15", "16–40", "40+"],
     nameLabel: "Nome",
@@ -102,7 +105,9 @@ const COPY = {
       noivos: "Couple",
       planner: "Wedding planner",
       quinta: "Venue",
+      outro: "Other",
     },
+    otherPlaceholder: "e.g. photographer, caterer, curious…",
     weddingsLegend: "Weddings per year",
     weddingsOptions: ["1–5", "6–15", "16–40", "40+"],
     nameLabel: "Name",
@@ -142,6 +147,7 @@ export function Waitlist() {
   const { lang } = useLang();
   const t = COPY[lang];
   const [audience, setAudience] = useState<AudienceKey>("noivos");
+  const [audienceOther, setAudienceOther] = useState("");
   const [weddings, setWeddings] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -150,12 +156,23 @@ export function Waitlist() {
   const [status, setStatus] = useState<Status>("idle");
 
   const isBusiness = audience === "planner" || audience === "quinta";
+  // What actually gets sent: the free-text value when "Outro" is chosen.
+  const audienceLabel =
+    audience === "outro"
+      ? audienceOther.trim() || "Outro"
+      : AUDIENCE_CANONICAL[audience];
 
   // Preselect the profile from ?perfil=… so the audience pages land here
   // on the right segment.
   useEffect(() => {
     const p = new URLSearchParams(window.location.search).get("perfil");
-    if (p === "planner" || p === "quinta" || p === "noivos") setAudience(p);
+    if (
+      p === "planner" ||
+      p === "quinta" ||
+      p === "noivos" ||
+      p === "outro"
+    )
+      setAudience(p);
     else if (p === "venue") setAudience("quinta");
     else if (p === "couple") setAudience("noivos");
   }, []);
@@ -168,14 +185,14 @@ export function Waitlist() {
 
   function openMailto() {
     const subject = encodeURIComponent(
-      `[${AUDIENCE_CANONICAL[audience]}] ${t.mailSubject}: ${name}`
+      `[${audienceLabel}] ${t.mailSubject}: ${name}`
     );
     const lines = [
       t.mailGreeting,
       "",
       t.mailIntro,
       "",
-      `${t.mailAudience}: ${AUDIENCE_CANONICAL[audience]}`,
+      `${t.mailAudience}: ${audienceLabel}`,
       ...(isBusiness && weddings
         ? [`${t.mailWeddings}: ${weddings}`]
         : []),
@@ -200,7 +217,7 @@ export function Waitlist() {
       email,
       date,
       problems,
-      audience: AUDIENCE_CANONICAL[audience],
+      audience: audienceLabel,
       weddingsPerYear: isBusiness ? weddings : "",
     };
     try {
@@ -231,7 +248,7 @@ export function Waitlist() {
   }
 
   const done = status === "sent" || status === "mailto";
-  const audienceKeys: AudienceKey[] = ["noivos", "planner", "quinta"];
+  const audienceKeys: AudienceKey[] = ["noivos", "planner", "quinta", "outro"];
 
   return (
     <section id="acesso" className="scroll-mt-20 paper">
@@ -276,7 +293,7 @@ export function Waitlist() {
                     <legend className="mb-2 block text-xs font-medium text-ink-700">
                       {t.audienceLegend}
                     </legend>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       {audienceKeys.map((key) => {
                         const active = audience === key;
                         return (
@@ -296,6 +313,16 @@ export function Waitlist() {
                         );
                       })}
                     </div>
+                    {audience === "outro" && (
+                      <input
+                        type="text"
+                        value={audienceOther}
+                        onChange={(e) => setAudienceOther(e.target.value)}
+                        placeholder={t.otherPlaceholder}
+                        aria-label={t.audienceLegend}
+                        className="mt-2 w-full rounded-xl border border-ivory-300 bg-[#111016] px-4 py-2.5 text-sm text-ink-900 outline-none transition-colors placeholder:text-ink-500/60 focus:border-olive-400"
+                      />
+                    )}
                   </fieldset>
 
                   {isBusiness && (
