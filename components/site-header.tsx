@@ -15,12 +15,16 @@ const links = [
   { href: "/#faq", pt: "FAQ", en: "FAQ" },
 ];
 
+// Existing customers log in to the product app.
+const LOGIN_URL = "https://app.weddingos.pt/login";
+
 export function SiteHeader() {
   const { lang } = useLang();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const cta = lang === "en" ? "Request access" : "Pedir acesso";
+  const login = lang === "en" ? "Log in" : "Entrar";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -61,8 +65,14 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           <LangToggle />
+          <a
+            href={LOGIN_URL}
+            className="text-sm font-medium text-ink-700 transition-colors hover:text-olive-700"
+          >
+            {login}
+          </a>
           <a
             href="/#acesso"
             className="inline-flex items-center rounded-full bg-olive-700 px-5 py-2.5 text-sm font-semibold text-[#17130a] shadow-sm transition-colors hover:bg-olive-800"
@@ -124,6 +134,13 @@ export function SiteHeader() {
                 {lang === "en" ? l.en : l.pt}
               </a>
             ))}
+            <a
+              href={LOGIN_URL}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-3 text-base font-medium text-ink-800 hover:bg-olive-50"
+            >
+              {login}
+            </a>
             <a
               href="/#acesso"
               onClick={() => setOpen(false)}

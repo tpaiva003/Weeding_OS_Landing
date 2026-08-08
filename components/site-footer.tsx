@@ -5,6 +5,7 @@ import { IconInstagram } from "./icons";
 import { useLang } from "./i18n";
 
 const INSTAGRAM_URL = "https://instagram.com/weddingos.pt";
+const LOGIN_URL = "https://app.weddingos.pt/login";
 
 const COPY = {
   pt: {
@@ -35,6 +36,8 @@ const COPY = {
     ],
     rights: "Todos os direitos reservados.",
     madeWith: "Feito com cuidado, para o dia mais importante.",
+    loginPrompt: "Já tens conta?",
+    login: "Entrar",
   },
   en: {
     tagline:
@@ -64,6 +67,8 @@ const COPY = {
     ],
     rights: "All rights reserved.",
     madeWith: "Made with care, for the most important day.",
+    loginPrompt: "Already have an account?",
+    login: "Log in",
   },
 };
 
@@ -97,6 +102,15 @@ export function SiteFooter() {
                 <IconInstagram className="h-5 w-5" />
               </a>
             </div>
+            <p className="mt-4 text-sm text-ink-500">
+              {t.loginPrompt}{" "}
+              <a
+                href={LOGIN_URL}
+                className="font-medium text-olive-700 transition-colors hover:text-olive-800"
+              >
+                {t.login}
+              </a>
+            </p>
           </div>
 
           {t.groups.map((g) => (

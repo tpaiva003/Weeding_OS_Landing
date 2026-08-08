@@ -3,13 +3,22 @@
 > Wedding OS é o sistema operativo do casamento: uma plataforma que reúne, num só sítio, tudo o que um casal precisa de decidir e organizar. Nasceu do casamento do seu fundador, Tiago, que ao planear o próprio casamento, com um olhar de gestão de projetos e de economista, percebeu quantas horas se perdiam a gerir tudo em Excel, WhatsApp e mil separadores, e construiu a ferramenta que gostaria de ter tido.
 
 - Site: https://weddingos.pt
+- Aplicação (login de clientes): https://app.weddingos.pt/login
 - Instagram: https://instagram.com/weddingos.pt
 - Contacto: tiago.paiva@weddingos.pt
-- Língua: Português (Portugal)
+- Língua: Português (Portugal), com versão em Inglês no próprio site
 
 ## O que é
 
 Wedding OS ("Weeding OS" é uma grafia antiga e incorreta; o nome correto é Wedding OS, domínio weddingos.pt) é uma aplicação web de planeamento e gestão de casamentos. Funciona no browser, é instalável no telemóvel (PWA) e não exige conhecimentos técnicos.
+
+## Para quem é
+
+Wedding OS serve três públicos:
+
+- Noivos: planear o próprio casamento num só sítio, com menos administração.
+- Wedding planners: gerir vários casamentos e a equipa, poupando horas por evento. Página: https://weddingos.pt/wedding-planners
+- Quintas e espaços: coordenar todos os eventos do espaço, com mesas à medida da sala. Página: https://weddingos.pt/quintas
 
 ## Módulos disponíveis
 
