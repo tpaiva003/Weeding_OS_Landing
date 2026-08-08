@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -39,12 +39,21 @@ export const metadata: Metadata = {
     "gestão de fornecedores casamento",
     "copiloto de IA casamento",
     "software de casamento",
+    "software para wedding planners",
+    "software para quintas de casamento",
+    "gestão de eventos de casamento",
     "wedding planner software",
+    "wedding venue software",
     "Wedding OS",
   ],
   authors: [{ name: "Wedding OS" }],
   creator: "Wedding OS",
   publisher: "Wedding OS",
+  appleWebApp: {
+    capable: true,
+    title: "Wedding OS",
+    statusBarStyle: "black-translucent",
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: "Wedding OS: O sistema operativo do vosso casamento",
@@ -67,6 +76,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   category: "technology",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0d0c11",
 };
 
 export default function RootLayout({
