@@ -15,8 +15,9 @@ const links = [
   { href: "/#faq", pt: "FAQ", en: "FAQ" },
 ];
 
-// Existing customers log in to the product app.
-const LOGIN_URL = "https://app.weddingos.pt/login";
+// Existing customers log in to the product app. The current site language
+// is passed along (?lang=) so the login opens in the same language.
+const LOGIN_BASE = "https://app.weddingos.pt/login";
 
 export function SiteHeader() {
   const { lang } = useLang();
@@ -25,6 +26,7 @@ export function SiteHeader() {
 
   const cta = lang === "en" ? "Request access" : "Pedir acesso";
   const login = lang === "en" ? "Log in" : "Entrar";
+  const loginHref = `${LOGIN_BASE}?lang=${lang}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -68,7 +70,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-4 md:flex">
           <LangToggle />
           <a
-            href={LOGIN_URL}
+            href={loginHref}
             className="text-sm font-medium text-ink-700 transition-colors hover:text-olive-700"
           >
             {login}
@@ -135,7 +137,7 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href={LOGIN_URL}
+              href={loginHref}
               onClick={() => setOpen(false)}
               className="rounded-lg px-3 py-3 text-base font-medium text-ink-800 hover:bg-olive-50"
             >

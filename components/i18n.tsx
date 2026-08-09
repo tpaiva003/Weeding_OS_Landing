@@ -58,6 +58,15 @@ export function LanguageProvider({
 
   useEffect(() => {
     document.documentElement.lang = lang === "en" ? "en" : "pt-PT";
+    // Share the choice with the product app (app.weddingos.pt) via a cookie
+    // scoped to the parent domain. The leading dot makes it readable on both
+    // weddingos.pt and app.weddingos.pt, so a direct visit to the login also
+    // gets the right language. Harmless on other hosts (browser drops it).
+    try {
+      document.cookie = `wos-locale=${lang}; domain=.weddingos.pt; path=/; max-age=31536000; SameSite=Lax; Secure`;
+    } catch {
+      // ignore (e.g. cookies disabled)
+    }
   }, [lang]);
 
   const setLang = useCallback((l: Lang) => {

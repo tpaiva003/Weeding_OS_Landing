@@ -5,7 +5,9 @@ import { IconInstagram } from "./icons";
 import { useLang } from "./i18n";
 
 const INSTAGRAM_URL = "https://instagram.com/weddingos.pt";
-const LOGIN_URL = "https://app.weddingos.pt/login";
+// Current site language is passed along (?lang=) so the login opens in the
+// same language the visitor was reading.
+const LOGIN_BASE = "https://app.weddingos.pt/login";
 
 const COPY = {
   pt: {
@@ -105,7 +107,7 @@ export function SiteFooter() {
             <p className="mt-4 text-sm text-ink-500">
               {t.loginPrompt}{" "}
               <a
-                href={LOGIN_URL}
+                href={`${LOGIN_BASE}?lang=${lang}`}
                 className="font-medium text-olive-700 transition-colors hover:text-olive-800"
               >
                 {t.login}
