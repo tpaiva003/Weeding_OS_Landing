@@ -44,7 +44,11 @@ Wedding OS serve três públicos:
 - Relatórios & exportações (catering em PDF, pagamentos em CSV).
 - Privacidade & RGPD: dados alojados na Europa e apagados após o casamento.
 
+## English summary
+
+Wedding OS is an all-in-one wedding planning and management platform (web app, installable as a PWA). It brings guest list and RSVP management, seating charts, vendor and payment tracking, wedding budgeting (P&L), catering and dietary requirements, day-of coordination, music planning and an AI wedding copilot into a single place. It serves three audiences: couples planning their own wedding, wedding planners managing many weddings with their team, and wedding venues coordinating every event they host. Built by its founder from the experience of planning his own wedding. Portuguese and English. Site: https://weddingos.pt. Product login: https://app.weddingos.pt/login.
+
 ## Notas
 
-- Algumas funcionalidades voltadas ao convidado são reveladas apenas em demonstração ou após o casamento dos fundadores.
+- Algumas funcionalidades voltadas ao convidado são reveladas apenas em demonstração ou após o casamento do fundador.
 - Acesso: mediante pedido em https://weddingos.pt (secção "Pedir acesso").
