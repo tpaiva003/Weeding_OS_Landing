@@ -34,7 +34,7 @@ const COPY = {
     present: "estar presentes no nosso próprio dia",
     p3b: ". Chamámos-lhe Wedding OS. E agora é vosso também.",
     signature: "Tiago, fundador do Wedding OS",
-    role: "Casam a 4 de Outubro de 2026, na Quinta da Pedra Salgada",
+    role: "Casamos a 4 de Outubro de 2026.",
     quote:
       "O problema nunca foi falta de amor. Era falta de um sítio só para tudo o que tínhamos de decidir.",
     stats: [
@@ -65,7 +65,7 @@ const COPY = {
     present: "being present on our own day",
     p3b: ". We called it Wedding OS. And now it's yours too.",
     signature: "Tiago, founder of Wedding OS",
-    role: "Marrying on 4 October 2026, at Quinta da Pedra Salgada",
+    role: "We're getting married on 4 October 2026.",
     quote:
       "The problem was never a lack of love. It was the lack of one place for everything we had to decide.",
     stats: [
