@@ -6,9 +6,10 @@ import { IconArrow, IconCheck } from "./icons";
 import { useLang } from "./i18n";
 
 /**
- * Early-access capture. Posts to /api/access, which emails the request via
- * SMTP. If the server isn't configured yet (no SMTP env vars), it falls back
- * to opening the visitor's mail client with a pre-filled message.
+ * Early-access capture. Submits to Web3Forms (a free, server-side form
+ * endpoint) which emails the request to us. Reliable on mobile — unlike a
+ * mailto:, which many phones and in-app browsers silently ignore.
+ * Configure the public access key via NEXT_PUBLIC_WEB3FORMS_KEY.
  *
  * The audience selector qualifies leads (couple / wedding planner / venue).
  * A `?perfil=planner|quinta|noivos` query param preselects it, so the
@@ -16,6 +17,11 @@ import { useLang } from "./i18n";
  */
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "tiago.paiva@weddingos.pt";
+
+// Web3Forms public access key (safe to expose in the client — that is how
+// Web3Forms is designed to work).
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 type AudienceKey = "noivos" | "planner" | "quinta" | "outro";
 
@@ -65,24 +71,12 @@ const COPY = {
     submit: "Pedir acesso",
     submitting: "A enviar…",
     sentTitle: "Pedido enviado!",
-    almostTitle: "Quase lá!",
     sentBody: "Recebemos o vosso pedido. Respondemos pessoalmente, em breve.",
-    almostBody:
-      "Abrimos o teu email com o pedido pré-preenchido. É só enviar: respondemos em breve.",
     errorA: "Não foi possível enviar agora. Tenta de novo ou escreve para ",
     reassurance: "Sem compromisso. Respondemos pessoalmente.",
-    // mailto body
+    // email content
     mailSubject: "Pedido de acesso",
-    mailGreeting: "Olá,",
-    mailIntro: "Gostaria de acesso antecipado ao Wedding OS.",
-    mailAudience: "Perfil",
-    mailWeddings: "Casamentos por ano",
-    mailName: "Nome",
-    mailEmail: "Email",
-    mailDate: "Data do casamento",
-    mailProblems: "O que procuro resolver:",
     mailNone: "(não indicado)",
-    mailThanks: "Obrigado!",
   },
   en: {
     problems: [
@@ -120,28 +114,16 @@ const COPY = {
     submit: "Request access",
     submitting: "Sending…",
     sentTitle: "Request sent!",
-    almostTitle: "Almost there!",
     sentBody: "We've received your request. We'll reply personally, soon.",
-    almostBody:
-      "We've opened your email with the request pre-filled. Just hit send: we'll reply soon.",
     errorA: "We couldn't send just now. Try again or write to ",
     reassurance: "No commitment. We reply personally.",
-    // mailto body
+    // email content
     mailSubject: "Access request",
-    mailGreeting: "Hello,",
-    mailIntro: "I'd like early access to Wedding OS.",
-    mailAudience: "Profile",
-    mailWeddings: "Weddings per year",
-    mailName: "Name",
-    mailEmail: "Email",
-    mailDate: "Wedding date",
-    mailProblems: "What I'm looking to solve:",
     mailNone: "(not specified)",
-    mailThanks: "Thank you!",
   },
 };
 
-type Status = "idle" | "sending" | "sent" | "mailto" | "error";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export function Waitlist() {
   const { lang } = useLang();
@@ -183,71 +165,61 @@ export function Waitlist() {
     );
   }
 
-  function openMailto() {
-    const subject = encodeURIComponent(
-      `[${audienceLabel}] ${t.mailSubject}: ${name}`
-    );
-    const lines = [
-      t.mailGreeting,
-      "",
-      t.mailIntro,
-      "",
-      `${t.mailAudience}: ${audienceLabel}`,
-      ...(isBusiness && weddings
-        ? [`${t.mailWeddings}: ${weddings}`]
-        : []),
-      `${t.mailName}: ${name}`,
-      `${t.mailEmail}: ${email}`,
-      `${t.mailDate}: ${date || "-"}`,
-      "",
-      t.mailProblems,
-      ...(problems.length ? problems.map((p) => `- ${p}`) : [`- ${t.mailNone}`]),
-      "",
-      t.mailThanks,
-    ];
-    const body = encodeURIComponent(lines.join("\n"));
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  }
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
+
+    // Not configured yet (no key) → don't pretend it sent; show the contact.
+    if (!WEB3FORMS_KEY) {
+      setStatus("error");
+      return;
+    }
+
     const payload = {
-      name,
-      email,
-      date,
-      problems,
-      audience: audienceLabel,
-      weddingsPerYear: isBusiness ? weddings : "",
+      access_key: WEB3FORMS_KEY,
+      subject: `[${audienceLabel}] ${t.mailSubject}: ${name || email}`,
+      from_name: name || "Wedding OS",
+      replyto: email,
+      // Custom fields shown in the email we receive.
+      Perfil: audienceLabel,
+      ...(isBusiness && weddings ? { "Casamentos por ano": weddings } : {}),
+      Nome: name,
+      Email: email,
+      "Data do casamento": date || "-",
+      "O que procura resolver": problems.length
+        ? problems.join(", ")
+        : t.mailNone,
+      Idioma: lang,
     };
+
     try {
-      const res = await fetch("/api/access", {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(payload),
       });
-      if (res.ok) {
-        track("pedir_acesso", { via: "api", motivos: problems.length, perfil: audience });
+      const data = (await res.json().catch(() => ({}))) as {
+        success?: boolean;
+      };
+      if (res.ok && data.success) {
+        track("pedir_acesso", {
+          via: "web3forms",
+          motivos: problems.length,
+          perfil: audience,
+        });
         setStatus("sent");
-        return;
-      }
-      // Backend not configured (501) → graceful fallback to the mail client.
-      if (res.status === 501) {
-        track("pedir_acesso", { via: "mailto", motivos: problems.length, perfil: audience });
-        openMailto();
-        setStatus("mailto");
         return;
       }
       setStatus("error");
     } catch {
-      // Network error → still let the request go through via mailto.
-      track("pedir_acesso", { via: "mailto", motivos: problems.length, perfil: audience });
-      openMailto();
-      setStatus("mailto");
+      setStatus("error");
     }
   }
 
-  const done = status === "sent" || status === "mailto";
+  const done = status === "sent";
   const audienceKeys: AudienceKey[] = ["noivos", "planner", "quinta", "outro"];
 
   return (
@@ -281,11 +253,9 @@ export function Waitlist() {
                     <IconCheck className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 font-display text-xl font-semibold text-ink-900">
-                    {status === "sent" ? t.sentTitle : t.almostTitle}
+                    {t.sentTitle}
                   </h3>
-                  <p className="mt-2 text-sm text-ink-700">
-                    {status === "sent" ? t.sentBody : t.almostBody}
-                  </p>
+                  <p className="mt-2 text-sm text-ink-700">{t.sentBody}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
