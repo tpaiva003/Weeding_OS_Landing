@@ -66,6 +66,7 @@ const COPY = {
     emailLabel: "Email",
     emailPlaceholder: "voces@email.com",
     dateLabel: "Data do casamento",
+    dateLabelNext: "Data do próximo casamento",
     optional: "(opcional)",
     problemsLegend: "O que procuram resolver?",
     submit: "Pedir acesso",
@@ -109,6 +110,7 @@ const COPY = {
     emailLabel: "Email",
     emailPlaceholder: "you@email.com",
     dateLabel: "Wedding date",
+    dateLabelNext: "Next wedding date",
     optional: "(optional)",
     problemsLegend: "What are you looking to solve?",
     submit: "Request access",
@@ -143,6 +145,14 @@ export function Waitlist() {
     audience === "outro"
       ? audienceOther.trim() || "Outro"
       : AUDIENCE_CANONICAL[audience];
+
+  // The date question reframes for non-couples: a wedding planner or venue
+  // gives the next wedding they'd use Wedding OS for, not "their" wedding.
+  const isCouple = audience === "noivos";
+  const dateFieldLabel = isCouple ? t.dateLabel : t.dateLabelNext;
+  const dateEmailLabel = isCouple
+    ? "Data do casamento"
+    : "Data do próximo casamento";
 
   // Preselect the profile from ?perfil=… so the audience pages land here
   // on the right segment.
@@ -185,7 +195,7 @@ export function Waitlist() {
       ...(isBusiness && weddings ? { "Casamentos por ano": weddings } : {}),
       Nome: name,
       Email: email,
-      "Data do casamento": date || "-",
+      [dateEmailLabel]: date || "-",
       "O que procura resolver": problems.length
         ? problems.join(", ")
         : t.mailNone,
@@ -365,7 +375,7 @@ export function Waitlist() {
                       htmlFor="date"
                       className="mb-1.5 block text-xs font-medium text-ink-700"
                     >
-                      {t.dateLabel}{" "}
+                      {dateFieldLabel}{" "}
                       <span className="text-ink-500/70">{t.optional}</span>
                     </label>
                     <input
